@@ -10,24 +10,10 @@
         tools:openDrawer="start">
 
         <include
-            android:id="@+id/activity_app_bar"
+            android:id="@+id/app_bar"
             layout="@layout/layout_appbar"
             android:layout_height="match_parent"
             android:layout_width="match_parent" />
-
-        <include
-            android:id="@+id/include_content_main"
-            layout="@layout/content_main" />
-
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_marginEnd="@dimen/fab_margin"
-            android:layout_marginBottom="16dp"
-            app:srcCompat="@android:drawable/ic_dialog_email"
-            tools:ignore="ContentDescription" />
 
         <com.google.android.material.navigation.NavigationView
             android:id="@+id/nav_View"
@@ -37,6 +23,5 @@
             android:fitsSystemWindows="true"
             app:headerLayout="@layout/navdrawer"
             app:menu="@menu/menu_navdrawer" />
-
 
     </androidx.drawerlayout.widget.DrawerLayout>

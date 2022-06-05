@@ -5,48 +5,52 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
 
-    <group android:checkableBehavior="single">
+    <group
+        android:id="@+id/navitem_grp1"
+        android:checkableBehavior="single">
         <item
-            android:icon="@drawable/ic_baseline_settings_24"
+            android:icon="@drawable/ic_baseline_menu_book_24"
             android:id="@+id/firstFragment"
             android:name="com.bscs3a_2022.quizappproject2.FirstFragment"
-            android:title="@string/item_1"
+            android:title="@string/subjects"
             />
         <item
-            android:id="@+id/secondFragment"
-            android:title="@string/item_2"
-            android:icon="@drawable/ic_baseline_settings_24"/>
-        <item
             android:id="@+id/quizFragment"
-            android:title="@string/item_3"
-            android:icon="@drawable/ic_baseline_settings_24"/>
+            android:title="@string/quizzes"
+            android:icon="@drawable/ic_baseline_question_answer_24"/>
+        <item
+            android:id="@+id/notificationsFragment"
+            android:title="@string/notifications"
+            android:icon="@drawable/ic_baseline_notifications_24"/>
         <item
             android:id="@+id/loginFragment"
-            android:title="@string/item_4"
-            android:icon="@drawable/ic_baseline_settings_24"/>
+            android:title="@string/log_in"
+            android:icon="@drawable/ic_baseline_login_24"/>
         <item
-            android:id="@+id/nav_5"
-            android:title="@string/item_5"
-            android:icon="@drawable/ic_baseline_settings_24"/>
-
-        <item
-            android:id="@+id/nav_x"
-            android:name="com.bscs3a_2022.quizappproject2.FirstFragment"
-            android:title="@string/sub_items">
-            <menu>
-                <group android:checkableBehavior="single">
-                    <item
-                        android:id="@+id/nav_6"
-                        android:title="@string/item_6"
-                        />
-
-                    <item
-                        android:id="@+id/nav_7"
-                        android:title="@string/item_7"
-                        />
-                </group>
-            </menu>
-        </item>
+            android:id="@+id/diceFragment"
+            android:title="Dice"
+            android:icon="@drawable/svgrepo_com_dice"
+            tools:ignore="HardcodedText" />
     </group>
 
+    <group
+        android:id="@+id/navitem_grp2"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/aboutFragment"
+            android:icon="@drawable/ic_baseline_info_24"
+            android:title="@string/about" />
+        <item
+            android:id="@+id/helpAndFeedbackFragment"
+            android:icon="@drawable/ic_baseline_help_24"
+            android:title="@string/helpfeedback" />
+        <item
+            android:id="@+id/item8"
+            android:icon="@drawable/ic_baseline_share_24"
+            android:title="@string/share_the_app" />
+        <item
+            android:id="@+id/nav_9"
+            android:icon="@drawable/ic_baseline_school_24"
+            android:title="@string/visit_nvsu_online" />
+    </group>
 </menu>

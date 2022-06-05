@@ -15,6 +15,7 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.ProgressBar
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.bscs3a_2022.quizappproject2.databinding.FragmentLoginBinding
 
 import com.bscs3a_2022.quizappproject2.R
@@ -43,6 +44,8 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         loginViewModel = ViewModelProvider(this, LoginViewModelFactory())
             .get(LoginViewModel::class.java)
+
+        (activity as AppCompatActivity).supportActionBar?.title = "Login/Sign Up"
 
         val usernameEditText = binding.username
         val passwordEditText = binding.password

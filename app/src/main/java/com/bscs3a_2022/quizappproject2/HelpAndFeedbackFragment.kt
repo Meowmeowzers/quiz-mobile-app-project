@@ -6,18 +6,11 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.fragment.findNavController
-import com.bscs3a_2022.quizappproject2.databinding.FragmentSecondBinding
+import com.bscs3a_2022.quizappproject2.databinding.FragmentHelpAndFeedbackBinding
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
-class SecondFragment : Fragment() {
+class HelpAndFeedbackFragment : Fragment() {
 
-    private var _binding: FragmentSecondBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
+    private var _binding: FragmentHelpAndFeedbackBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -25,7 +18,7 @@ class SecondFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentSecondBinding.inflate(inflater, container, false)
+        _binding = FragmentHelpAndFeedbackBinding.inflate(inflater, container, false)
         return binding.root
 
     }
@@ -33,14 +26,14 @@ class SecondFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        (activity as AppCompatActivity).supportActionBar?.title = "Second Fragment"
-        binding.buttonSecond.setOnClickListener {
-            findNavController().navigate(R.id.action_secondFragment_to_firstFragment)
-        }
+        (activity as AppCompatActivity).supportActionBar?.title = "Help and Feedback"
+
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
     }
+
+
 }
