@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/res_navigation"
-    app:startDestination="@id/firstFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/firstFragment"
@@ -31,8 +31,37 @@
         tools:layout="@layout/fragment_quiz" />
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.bscs3a_2022.quizappproject2.ui.login.LoginFragment"
+        android:name="com.bscs3a_2022.quizappproject2.login.ui.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/diceFragment"
+        android:name="com.bscs3a_2022.quizappproject2.dice.DiceFragment"
+        android:label="fragment_dice"
+        tools:layout="@layout/fragment_dice" />
+    <fragment
+        android:id="@+id/aboutFragment"
+        android:name="com.bscs3a_2022.quizappproject2.AboutFragment"
+        android:label="fragment_about"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/helpAndFeedbackFragment"
+        android:name="com.bscs3a_2022.quizappproject2.HelpAndFeedbackFragment"
+        android:label="fragment_help_and_feedback"
+        tools:layout="@layout/fragment_help_and_feedback" />
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.bscs3a_2022.quizappproject2.NotificationsFragment"
+        android:label="fragment_notifications"
+        tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/affirmationsFragment"
+        android:name="com.bscs3a_2022.quizappproject2.AffirmationsFragment"
+        android:label="fragment_affirmation_item_list"
+        tools:layout="@layout/fragment_affirmation_item_list" />
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="com.bscs3a_2022.quizappproject2.test.BlankFragment"
+        android:label="BlankFragment" />
 
 </navigation>
