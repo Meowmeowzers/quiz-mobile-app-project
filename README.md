@@ -1,2 +1,8 @@
+
 # Quiz_App_Project
-quiz app project for college 
+
+- Project for a subject in college 
+- I used Android Studio and Kotlin for this project
+
+<br>
+https://developer.android.com/courses/kotlin-android-fundamentals/overview
