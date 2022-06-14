@@ -3,11 +3,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/res_navigation"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/quizFragment">
 
     <fragment
         android:id="@+id/firstFragment"
-        android:name="com.bscs3a_2022.quizappproject2.FirstFragment"
+        android:name="com.bscs3a_2022.quizappproject2.fragments.FirstFragment"
         android:label="First Fragment"
         tools:layout="@layout/fragment_first" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/secondFragment"
-        android:name="com.bscs3a_2022.quizappproject2.SecondFragment"
+        android:name="com.bscs3a_2022.quizappproject2.fragments.SecondFragment"
         android:label="Second Fragment"
         tools:layout="@layout/fragment_second" >
 
@@ -26,9 +26,13 @@
     </fragment>
     <fragment
         android:id="@+id/quizFragment"
-        android:name="com.bscs3a_2022.quizappproject2.QuizFragment"
+        android:name="com.bscs3a_2022.quizappproject2.quiz.QuizFragment"
         android:label="fragment_quiz"
-        tools:layout="@layout/fragment_quiz" />
+        tools:layout="@layout/fragment_quiz" >
+        <argument
+            android:name="quizSetId"
+            app:argType="long" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.bscs3a_2022.quizappproject2.login.ui.LoginFragment"
@@ -41,27 +45,32 @@
         tools:layout="@layout/fragment_dice" />
     <fragment
         android:id="@+id/aboutFragment"
-        android:name="com.bscs3a_2022.quizappproject2.AboutFragment"
+        android:name="com.bscs3a_2022.quizappproject2.fragments.AboutFragment"
         android:label="fragment_about"
         tools:layout="@layout/fragment_about" />
     <fragment
         android:id="@+id/helpAndFeedbackFragment"
-        android:name="com.bscs3a_2022.quizappproject2.HelpAndFeedbackFragment"
+        android:name="com.bscs3a_2022.quizappproject2.fragments.HelpAndFeedbackFragment"
         android:label="fragment_help_and_feedback"
         tools:layout="@layout/fragment_help_and_feedback" />
     <fragment
         android:id="@+id/notificationsFragment"
-        android:name="com.bscs3a_2022.quizappproject2.NotificationsFragment"
+        android:name="com.bscs3a_2022.quizappproject2.fragments.NotificationsFragment"
         android:label="fragment_notifications"
         tools:layout="@layout/fragment_notifications" />
     <fragment
         android:id="@+id/affirmationsFragment"
-        android:name="com.bscs3a_2022.quizappproject2.AffirmationsFragment"
+        android:name="com.bscs3a_2022.quizappproject2.fragments.AffirmationsFragment"
         android:label="fragment_affirmation_item_list"
         tools:layout="@layout/fragment_affirmation_item_list" />
     <fragment
         android:id="@+id/blankFragment"
         android:name="com.bscs3a_2022.quizappproject2.test.BlankFragment"
         android:label="BlankFragment" />
+    <fragment
+        android:id="@+id/quizCreateFragment"
+        android:name="com.bscs3a_2022.quizappproject2.quiz.QuizCreateFragment"
+        android:label="fragment_quiz_create"
+        tools:layout="@layout/fragment_quiz_create" />
 
 </navigation>

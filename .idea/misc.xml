@@ -25,6 +25,7 @@
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/activity_main.xml" value="0.33" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/activity_splash_screen.xml" value="0.2125" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/content_main.xml" value="0.2125" />
+        <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/create_quiz_item_list.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/fragment_about.xml" value="0.25" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/fragment_affirmation_item.xml" value="0.33" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/fragment_affirmation_item_list.xml" value="0.5" />
@@ -35,15 +36,20 @@
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/fragment_help_and_feedback.xml" value="0.2125" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/fragment_login.xml" value="0.22" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/fragment_notifications.xml" value="0.1" />
-        <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/fragment_quiz.xml" value="0.2125" />
+        <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/fragment_quiz.xml" value="0.25" />
+        <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/fragment_quiz_create.xml" value="0.25" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/fragment_room_database_test.xml" value="0.31875" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/fragment_second.xml" value="0.1" />
-        <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/layout_appbar.xml" value="0.2125" />
+        <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/layout_appbar.xml" value="0.31875" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/navbar.xml" value="0.75" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/navdrawer.xml" value="0.2916666666666667" />
+        <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz/fragment_quiz_create.xml" value="0.31875" />
+        <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_item_card_list.xml" value="0.33" />
+        <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_item_list.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_item_list_text.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/view_quiz.xml" value="0.31875" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/menu/menu_main.xml" value="0.2125" />
-        <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/menu/menu_navdrawer.xml" value="0.9" />
+        <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/menu/menu_navdrawer.xml" value="0.33" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1235" />
       </map>
     </option>

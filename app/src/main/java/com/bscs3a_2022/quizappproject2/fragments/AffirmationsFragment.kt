@@ -1,4 +1,4 @@
-package com.bscs3a_2022.quizappproject2
+package com.bscs3a_2022.quizappproject2.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.bscs3a_2022.quizappproject2.R
 import com.bscs3a_2022.quizappproject2.adapters.MyAffirmationsRecyclerViewAdapter
 import com.bscs3a_2022.quizappproject2.placeholder.PlaceholderContent
 

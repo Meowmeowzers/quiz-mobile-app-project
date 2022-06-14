@@ -1,4 +1,4 @@
-package com.bscs3a_2022.quizappproject2
+package com.bscs3a_2022.quizappproject2.fragments
 
 import android.content.Intent
 import android.os.Bundle

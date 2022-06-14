@@ -1,4 +1,4 @@
-package com.bscs3a_2022.quizappproject2
+package com.bscs3a_2022.quizappproject2.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,11 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
-import com.bscs3a_2022.quizappproject2.databinding.FragmentAboutBinding
+import com.bscs3a_2022.quizappproject2.databinding.FragmentNotificationsBinding
 
-class AboutFragment : Fragment() {
 
-    private var _binding: FragmentAboutBinding? = null
+class NotificationsFragment : Fragment() {
+
+    private var _binding: FragmentNotificationsBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -18,7 +19,7 @@ class AboutFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentAboutBinding.inflate(inflater, container, false)
+        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
         return binding.root
 
     }
@@ -26,7 +27,7 @@ class AboutFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        (activity as AppCompatActivity).supportActionBar?.title = "About Us"
+        (activity as AppCompatActivity).supportActionBar?.title = "Notifications"
 
     }
 

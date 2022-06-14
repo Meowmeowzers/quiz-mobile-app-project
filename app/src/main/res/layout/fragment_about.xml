@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".AboutFragment">
+    tools:context=".fragments.AboutFragment">
 
         <TextView
         android:text="Laureta, Leonardo B.\n\nSalvador, Philip U.\n\nBSCS 3-A"

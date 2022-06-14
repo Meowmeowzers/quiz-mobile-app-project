@@ -1,4 +1,4 @@
-package com.bscs3a_2022.quizappproject2
+package com.bscs3a_2022.quizappproject2.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import com.bscs3a_2022.quizappproject2.R
 import com.bscs3a_2022.quizappproject2.databinding.FragmentDiceBinding
 
 

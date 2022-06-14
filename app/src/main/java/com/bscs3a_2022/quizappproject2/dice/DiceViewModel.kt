@@ -5,6 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.bscs3a_2022.quizappproject2.R
 import timber.log.Timber
+import java.lang.NullPointerException
 
 
 class DiceViewModel : ViewModel() {
@@ -15,10 +16,8 @@ class DiceViewModel : ViewModel() {
     private val _drawResource = MutableLiveData<Int>()
     val drawResource: LiveData<Int> get() = _drawResource
 
-    val diceText = "Hello World Muning!"
-
-
     private var drawResources = listOf(
+        R.drawable.svgrepo_com_dice,
         R.drawable.svgrepo_com_dice_1,
         R.drawable.svgrepo_com_dice_2,
         R.drawable.svgrepo_com_dice_3,
@@ -29,11 +28,13 @@ class DiceViewModel : ViewModel() {
 
     init {
         Timber.i("DiceViewModel created!")
-        _randomInt.value = 0
+//        _randomInt.value = 0
         _drawResource.value = R.drawable.svgrepo_com_dice
     }
 
     fun rollDice(){
+//        Toast.makeText(requireActivity(), "Dice Rolled",
+//            Toast.LENGTH_SHORT).show()
         _randomInt.value = (1 .. 6).random()
         setImage()
         //setDiceText(randomInt.value)
@@ -41,6 +42,8 @@ class DiceViewModel : ViewModel() {
 
     fun add1(){
 //        randomInt++
+        if(_randomInt.value == null)
+            _randomInt.value = 0
         _randomInt.value = (randomInt.value)?.plus(1)
         setImage()
         //setDiceText(randomInt.value)
@@ -50,12 +53,13 @@ class DiceViewModel : ViewModel() {
     }*/
     private fun setImage(){
         _drawResource.value = when (randomInt.value){
-            1 -> drawResources[0]
-            2 -> drawResources[1]
-            3 -> drawResources[2]
-            4 -> drawResources[3]
-            5 -> drawResources[4]
-            else -> drawResources[5]
+            0 -> drawResources[0]
+            1 -> drawResources[1]
+            2 -> drawResources[2]
+            3 -> drawResources[3]
+            4 -> drawResources[4]
+            5 -> drawResources[5]
+            else -> drawResources[6]
         }
 
     }

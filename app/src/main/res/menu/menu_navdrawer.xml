@@ -12,8 +12,11 @@
             android:icon="@drawable/ic_baseline_menu_book_24"
             android:id="@+id/firstFragment"
             android:name="com.bscs3a_2022.quizappproject2.FirstFragment"
-            android:title="@string/subjects"
-            />
+            android:title="@string/subjects" />
+        <item
+            android:id="@+id/quizCreateFragment"
+            android:title="Create Quiz"
+            android:icon="@drawable/ic_baseline_add_24"/>
         <item
             android:id="@+id/quizFragment"
             android:title="@string/quizzes"

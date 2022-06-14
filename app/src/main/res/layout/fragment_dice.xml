@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+        name="diceViewModel"
+        type="com.bscs3a_2022.quizappproject2.dice.DiceViewModel" />
+    </data>
+
+<androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".dice.DiceFragment">
@@ -11,7 +18,7 @@
         android:id="@+id/textmodify"
         android:layout_width="137dp"
         android:layout_height="51dp"
-
+        android:text="Hello World Muning!..."
         android:textAlignment="center"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -20,6 +27,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.154"
         tools:ignore="HardcodedText" />
+
+    <ImageView
+        android:id="@+id/imageDice"
+        android:layout_width="140dp"
+        android:layout_height="138dp"
+        android:imageResource="@{diceViewModel.drawResource}"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textmodify"
+        app:layout_constraintVertical_bias="0.084"
+        app:srcCompat="@drawable/svgrepo_com_dice"
+        tools:ignore="ContentDescription"
+        />
 
     <Button
         android:id="@+id/rollbutton"
@@ -32,7 +54,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageDice"
         app:layout_constraintVertical_bias="0.182"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText"
+        android:onClick="@{() -> diceViewModel.rollDice()}"/>
 
     <Button
         android:id="@+id/add1button"
@@ -45,21 +68,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rollbutton"
         app:layout_constraintVertical_bias="0.059"
-        tools:ignore="HardcodedText" />
+        tools:ignore="HardcodedText"
+        android:onClick="@{() -> diceViewModel.add1()}"/>
 
-    <ImageView
-        android:id="@+id/imageDice"
-        android:layout_width="140dp"
-        android:layout_height="138dp"
-        android:src="@drawable/svgrepo_com_dice"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textmodify"
-        app:layout_constraintVertical_bias="0.084"
-        app:srcCompat="@drawable/svgrepo_com_dice"
-        tools:ignore="ContentDescription"
-        tools:src="@drawable/svgrepo_com_dice" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

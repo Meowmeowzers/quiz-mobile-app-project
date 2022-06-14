@@ -40,4 +40,10 @@
     <string name="share_the_app">Share the App</string>
     <string name="visit_nvsu_online">Visit NVSU Online</string>
     <string name="log_in">Log In</string>
+    <string name="clear">Clear</string>
+    <string name="stop">Stop</string>
+    <string name="start">Start</string>
+    <string name="quiz_name">Quiz Name</string>
+    <string name="quiz_description">Quiz Description</string>
+    <string name="quiz_subject">Quiz Subject</string>
 </resources>

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="quizCreateViewModel"
+            type="com.bscs3a_2022.quizappproject2.quiz.viewmodel_factory.QuizCreateViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".quiz.QuizCreateFragment">
+
+        <EditText
+            android:id="@+id/editTextQuizName"
+            android:layout_width="293dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="28dp"
+            android:ems="10"
+            android:hint="@string/quiz_name"
+            android:inputType="textPersonName"
+            android:textColorHint="#546E7A"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.534"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="LabelFor"
+            />
+
+        <EditText
+            android:id="@+id/editTextQuizDescription"
+            android:layout_width="290dp"
+            android:layout_height="72dp"
+            android:layout_marginTop="28dp"
+            android:ems="10"
+            android:gravity="start|top"
+            android:hint="@string/quiz_description"
+            android:importantForAutofill="no"
+            android:inputType="textMultiLine"
+            android:textColorHint="#546E7A"
+            app:layout_constraintEnd_toEndOf="@+id/editTextSubject"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/editTextSubject"
+            app:layout_constraintTop_toBottomOf="@+id/editTextSubject" />
+
+        <EditText
+            android:id="@+id/editTextSubject"
+            android:layout_width="293dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="40dp"
+            android:ems="10"
+            android:hint="@string/quiz_subject"
+            android:importantForAutofill="no"
+            android:inputType="textPersonName"
+            android:textColorHint="#546E7A"
+            app:layout_constraintEnd_toEndOf="@+id/editTextQuizName"
+            app:layout_constraintHorizontal_bias="0.508"
+            app:layout_constraintStart_toStartOf="@+id/editTextQuizName"
+            app:layout_constraintTop_toBottomOf="@+id/editTextQuizName"
+            tools:ignore="LabelFor" />
+
+        <Button
+            android:id="@+id/buttonCreateQuizNext"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/next"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.687"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextQuizDescription"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/buttonClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/clear"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.309"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editTextQuizDescription"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/addquizitem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:contentDescription="Add a quiz item"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_baseline_add_24"
+            tools:ignore="HardcodedText" />
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
