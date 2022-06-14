@@ -8,12 +8,12 @@ import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.bscs3a_2022.quizappproject2.quiz.database.QuizDatabase
-import com.bscs3a_2022.quizappproject2.databinding.FragmentQuizBinding
-import com.bscs3a_2022.quizappproject2.quiz.viewmodel_factory.QuizViewModel
-import com.bscs3a_2022.quizappproject2.quiz.viewmodel_factory.QuizViewModelFactory
+import com.bscs3a_2022.quizappproject2.databinding.QuizListBinding
+import com.bscs3a_2022.quizappproject2.quiz.viewmodel_factory.QuizListViewModel
+import com.bscs3a_2022.quizappproject2.quiz.viewmodel_factory.QuizListViewModelFactory
 
-class QuizFragment : Fragment() {
-    private var _binding: FragmentQuizBinding? = null
+class QuizListFragment : Fragment() {
+    private var _binding: QuizListBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,19 +26,19 @@ class QuizFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentQuizBinding.inflate(inflater, container, false)
+        _binding = QuizListBinding.inflate(inflater, container, false)
         (activity as AppCompatActivity).supportActionBar?.title = "Quiz"
 
         val application = requireNotNull(this.activity).application
         val dataSource = QuizDatabase.getInstance(application).quizSetDatabaseDao
-        val viewModelFactory = QuizViewModelFactory(dataSource, application)
+        val viewModelFactory = QuizListViewModelFactory(dataSource, application)
         val viewModel =
-            ViewModelProvider(this, viewModelFactory)[QuizViewModel::class.java]
+            ViewModelProvider(this, viewModelFactory)[QuizListViewModel::class.java]
         binding.lifecycleOwner = viewLifecycleOwner
 
         binding.quizViewModel = viewModel
         val adapter = QuizListAdapter()
-        binding.quizitemlayout.quizRecycler.adapter = adapter
+        binding.quizRecycler.adapter = adapter
 
         viewModel.quizList.observe(viewLifecycleOwner) {
             it?.let {

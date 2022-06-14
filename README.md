@@ -1,5 +1,5 @@
 
-# Quiz_App_Project
+# Quiz App Project
 
 - Project for a subject in college 
 - I used Android Studio and Kotlin for this project

@@ -1,4 +1,4 @@
-package com.bscs3a_2022.quizappproject2.quiz.database
+package com.bscs3a_2022.quizappproject2.quiz.database.entities
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -13,7 +13,7 @@ data class QuizSet (
     val quizSetId: Long = 0L,
 
     @ColumnInfo(name= "quiz_name")
-    var quizName: String,
+    var name: String,
 
     @ColumnInfo(name= "quiz_description")
     var description: String,

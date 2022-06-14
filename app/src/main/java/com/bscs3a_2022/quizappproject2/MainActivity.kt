@@ -1,4 +1,4 @@
-package com.bscs3a_2022.quizappproject2.fragments
+package com.bscs3a_2022.quizappproject2
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

@@ -5,6 +5,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
+import com.bscs3a_2022.quizappproject2.quiz.database.entities.QuizSet
 
 @Dao
 interface QuizDatabaseDao {

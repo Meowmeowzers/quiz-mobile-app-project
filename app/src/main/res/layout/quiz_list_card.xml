@@ -6,7 +6,7 @@
     <data>
         <variable
             name="quiz"
-            type="com.bscs3a_2022.quizappproject2.quiz.database.QuizSet" />
+            type="com.bscs3a_2022.quizappproject2.quiz.database.entities.QuizSet" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

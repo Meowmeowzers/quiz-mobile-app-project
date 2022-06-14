@@ -6,7 +6,7 @@
         android:id="@+id/layout_drawer"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".fragments.MainActivity"
+        tools:context=".MainActivity"
         tools:openDrawer="start">
 
         <include

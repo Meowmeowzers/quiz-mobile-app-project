@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.bscs3a_2022.quizappproject2.quiz.database.entities.QuizSet
 
 @Database(entities = [QuizSet::class], version = 1, exportSchema = false)
 abstract class QuizDatabase : RoomDatabase() {

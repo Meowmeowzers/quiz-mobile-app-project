@@ -26,9 +26,9 @@
     </fragment>
     <fragment
         android:id="@+id/quizFragment"
-        android:name="com.bscs3a_2022.quizappproject2.quiz.QuizFragment"
+        android:name="com.bscs3a_2022.quizappproject2.quiz.QuizListFragment"
         android:label="fragment_quiz"
-        tools:layout="@layout/fragment_quiz" >
+        tools:layout="@layout/quiz_list" >
         <argument
             android:name="quizSetId"
             app:argType="long" />
@@ -71,6 +71,6 @@
         android:id="@+id/quizCreateFragment"
         android:name="com.bscs3a_2022.quizappproject2.quiz.QuizCreateFragment"
         android:label="fragment_quiz_create"
-        tools:layout="@layout/fragment_quiz_create" />
+        tools:layout="@layout/quiz_create" />
 
 </navigation>

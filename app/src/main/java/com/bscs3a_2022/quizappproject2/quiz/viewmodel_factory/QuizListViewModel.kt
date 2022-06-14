@@ -3,12 +3,12 @@ package com.bscs3a_2022.quizappproject2.quiz.viewmodel_factory
 import android.app.Application
 import androidx.lifecycle.*
 import com.bscs3a_2022.quizappproject2.quiz.database.QuizDatabaseDao
-import com.bscs3a_2022.quizappproject2.quiz.database.QuizSet
+import com.bscs3a_2022.quizappproject2.quiz.database.entities.QuizSet
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
-class QuizViewModel (
+class QuizListViewModel (
     val database: QuizDatabaseDao,
     application: Application) : AndroidViewModel(application){
 
