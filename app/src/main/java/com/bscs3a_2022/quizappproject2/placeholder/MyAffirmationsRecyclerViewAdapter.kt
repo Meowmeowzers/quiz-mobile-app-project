@@ -1,4 +1,4 @@
-package com.bscs3a_2022.quizappproject2.adapters
+package com.bscs3a_2022.quizappproject2.placeholder
 
 import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater

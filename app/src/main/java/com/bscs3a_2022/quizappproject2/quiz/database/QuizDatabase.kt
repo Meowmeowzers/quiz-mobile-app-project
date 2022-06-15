@@ -4,9 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.bscs3a_2022.quizappproject2.quiz.database.entities.Choices
+import com.bscs3a_2022.quizappproject2.quiz.database.entities.Problems
 import com.bscs3a_2022.quizappproject2.quiz.database.entities.QuizSet
 
-@Database(entities = [QuizSet::class], version = 1, exportSchema = false)
+@Database(entities = [QuizSet::class, Problems::class, Choices::class], version = 1, exportSchema = false)
 abstract class QuizDatabase : RoomDatabase() {
 
     abstract val quizSetDatabaseDao: QuizDatabaseDao
@@ -23,7 +25,7 @@ abstract class QuizDatabase : RoomDatabase() {
                     instance = Room.databaseBuilder(
                         context.applicationContext,
                         QuizDatabase::class.java,
-                        "quiz_set_database")
+                        "quiz_database")
                         .fallbackToDestructiveMigration()
                         .build()
                     INSTANCE = instance

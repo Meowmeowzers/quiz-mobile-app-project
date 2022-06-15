@@ -9,7 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.bscs3a_2022.quizappproject2.R
-import com.bscs3a_2022.quizappproject2.adapters.MyAffirmationsRecyclerViewAdapter
+import com.bscs3a_2022.quizappproject2.placeholder.MyAffirmationsRecyclerViewAdapter
 import com.bscs3a_2022.quizappproject2.placeholder.PlaceholderContent
 
 /**

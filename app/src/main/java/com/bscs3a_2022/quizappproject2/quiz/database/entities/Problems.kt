@@ -11,10 +11,10 @@ data class Problems (
     val quizSetId: Long = 0L,
 
     @ColumnInfo(name = "from_quiz_set")
-    var fromQuiz: Long = 0L,
+    var fromQuiz: Long,
 
     @ColumnInfo(name = "problem_description")
-    var description: String = ""
+    var description: String
 
 
 

@@ -11,13 +11,13 @@ data class Choices (
     val quizItemId: Long = 0L,
 
     @ColumnInfo(name = "from_quiz_set_problem")
-    var fromProblem: Long = 0L,
+    var fromProblem: Long ,
 
     @ColumnInfo(name = "choice_description")
-    var description: String = "",
+    var description: String,
 
     @ColumnInfo(name = "choice_answer")
-    var answer: Int = 0
+    var answer: Int
 
 
 
