@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigation_view">
@@ -9,26 +8,22 @@
         android:id="@+id/navitem_grp1"
         android:checkableBehavior="single">
         <item
-            android:icon="@drawable/ic_baseline_menu_book_24"
-            android:id="@+id/firstFragment"
-            android:name="com.bscs3a_2022.quizappproject2.FirstFragment"
-            android:title="@string/subjects" />
-        <item
             android:id="@+id/quizCreateFragment"
-            android:title="Create Quiz"
+            android:title="@string/create_quiz"
             android:icon="@drawable/ic_baseline_add_24"/>
         <item
             android:id="@+id/quizFragment"
             android:title="@string/quizzes"
             android:icon="@drawable/ic_baseline_question_answer_24"/>
         <item
+            android:icon="@drawable/ic_baseline_menu_book_24"
+            android:id="@+id/firstFragment"
+            android:name="com.bscs3a_2022.quizappproject2.FirstFragment"
+            android:title="@string/subjects" />
+        <item
             android:id="@+id/notificationsFragment"
             android:title="@string/notifications"
             android:icon="@drawable/ic_baseline_notifications_24"/>
-        <item
-            android:id="@+id/loginFragment"
-            android:title="@string/account"
-            android:icon="@drawable/ic_baseline_account_circle_24"/>
         <item
             android:id="@+id/diceFragment"
             android:title="Dice"
@@ -39,6 +34,10 @@
     <group
         android:id="@+id/navitem_grp2"
         android:checkableBehavior="single">
+        <item
+            android:id="@+id/loginFragment"
+            android:title="@string/account"
+            android:icon="@drawable/ic_baseline_account_circle_24"/>
         <item
             android:id="@+id/aboutFragment"
             android:icon="@drawable/ic_baseline_info_24"

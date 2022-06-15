@@ -46,4 +46,5 @@
     <string name="quiz_name">Quiz Name</string>
     <string name="quiz_description">Quiz Description</string>
     <string name="quiz_subject">Quiz Subject</string>
+    <string name="create_quiz">Create Quiz</string>
 </resources>
