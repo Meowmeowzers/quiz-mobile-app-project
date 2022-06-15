@@ -1,12 +1,11 @@
 package com.bscs3a_2022.quizappproject2.dice
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.bscs3a_2022.quizappproject2.databinding.FragmentDiceBinding
@@ -21,7 +20,7 @@ class DiceFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentDiceBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this)[DiceViewModel::class.java]
         binding.diceViewModel = viewModel

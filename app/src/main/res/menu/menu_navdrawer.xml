@@ -12,7 +12,7 @@
             android:title="@string/create_quiz"
             android:icon="@drawable/ic_baseline_add_24"/>
         <item
-            android:id="@+id/quizFragment"
+            android:id="@+id/quizListFragment"
             android:title="@string/quizzes"
             android:icon="@drawable/ic_baseline_question_answer_24"/>
         <item

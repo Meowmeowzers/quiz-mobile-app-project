@@ -26,7 +26,7 @@ class DiceFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentDiceBinding.inflate(inflater, container, false)
         return binding.root
     }

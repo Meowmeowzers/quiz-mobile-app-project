@@ -1,14 +1,16 @@
 package com.bscs3a_2022.quizappproject2
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.findNavController
 import android.view.Menu
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.*
-import com.bscs3a_2022.quizappproject2.R
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.bscs3a_2022.quizappproject2.databinding.ActivityMainBinding
 import com.google.android.material.navigation.NavigationView
 import timber.log.Timber
@@ -38,7 +40,7 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.loginFragment,
                 R.id.firstFragment,
-                R.id.quizFragment,
+                R.id.quizListFragment,
                 R.id.diceFragment,
                 R.id.aboutFragment,
                 R.id.notificationsFragment,

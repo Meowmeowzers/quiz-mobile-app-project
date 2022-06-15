@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/res_navigation"
-    app:startDestination="@id/quizFragment">
+    app:startDestination="@id/quizListFragment">
 
     <fragment
         android:id="@+id/firstFragment"
@@ -23,15 +23,6 @@
         <action
             android:id="@+id/action_secondFragment_to_firstFragment"
             app:destination="@id/firstFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/quizFragment"
-        android:name="com.bscs3a_2022.quizappproject2.quiz.QuizListFragment"
-        android:label="fragment_quiz"
-        tools:layout="@layout/quiz_list" >
-        <argument
-            android:name="quizSetId"
-            app:argType="long" />
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
@@ -71,6 +62,14 @@
         android:id="@+id/quizCreateFragment"
         android:name="com.bscs3a_2022.quizappproject2.quiz.QuizCreateFragment"
         android:label="fragment_quiz_create"
-        tools:layout="@layout/quiz_create" />
+        tools:layout="@layout/quiz_create" >
+        <action
+            android:id="@+id/action_quizCreateFragment_to_quizListFragment"
+            app:destination="@id/quizListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizListFragment"
+        android:name="com.bscs3a_2022.quizappproject2.quiz.QuizListFragment"
+        android:label="QuizListFragment" />
 
 </navigation>

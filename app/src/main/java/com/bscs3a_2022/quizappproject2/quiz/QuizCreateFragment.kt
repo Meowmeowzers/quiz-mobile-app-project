@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.bscs3a_2022.quizappproject2.R
 import com.bscs3a_2022.quizappproject2.databinding.QuizCreateBinding
 import com.bscs3a_2022.quizappproject2.quiz.database.QuizDatabase
 import com.bscs3a_2022.quizappproject2.quiz.viewmodel_factory.QuizCreateViewModel
@@ -37,6 +39,7 @@ class QuizCreateFragment : Fragment() {
             val quizDescription = binding.editTextQuizDescription.text.toString()
             val subject = binding.editTextSubject.text.toString()
             viewModel.createQuiz(quizName, quizDescription, subject)
+            findNavController().navigate(R.id.action_quizCreateFragment_to_quizListFragment)
         }
         binding.buttonClear.setOnClickListener {
             viewModel.clearDb()

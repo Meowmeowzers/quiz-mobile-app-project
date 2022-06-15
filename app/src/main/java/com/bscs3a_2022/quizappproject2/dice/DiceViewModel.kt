@@ -5,7 +5,6 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.bscs3a_2022.quizappproject2.R
 import timber.log.Timber
-import java.lang.NullPointerException
 
 
 class DiceViewModel : ViewModel() {

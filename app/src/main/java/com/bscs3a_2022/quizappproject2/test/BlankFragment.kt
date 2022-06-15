@@ -18,7 +18,7 @@ class BlankFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
 
         _binding = FragmentBlankBinding.inflate(inflater, container, false)
         viewModel = ViewModelProvider(this)[BlankViewModel::class.java]
@@ -34,7 +34,4 @@ class BlankFragment : Fragment() {
         return binding.root
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-    }
 }
