@@ -40,6 +40,7 @@
         android:contentDescription="@string/add_a_quiz_item"
         android:minWidth="48dp"
         android:minHeight="48dp"
+        style="@style/button_teal_1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/ic_baseline_add_24"
