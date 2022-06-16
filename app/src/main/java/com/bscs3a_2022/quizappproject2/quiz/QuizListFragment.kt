@@ -1,12 +1,12 @@
 package com.bscs3a_2022.quizappproject2.quiz
 
 import android.os.Bundle
+import android.view.*
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
+import com.bscs3a_2022.quizappproject2.R
 import com.bscs3a_2022.quizappproject2.quiz.database.QuizDatabase
 import com.bscs3a_2022.quizappproject2.databinding.QuizListBinding
 import com.bscs3a_2022.quizappproject2.quiz.viewmodel_factory.QuizListViewModel
@@ -20,8 +20,8 @@ class QuizListFragment : Fragment() {
         super.onCreate(savedInstanceState)
         arguments?.let {
         }
+        setHasOptionsMenu(true)
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -46,9 +46,16 @@ class QuizListFragment : Fragment() {
             }
         }
 
+        binding.addquizitem.setOnClickListener{
+            findNavController().navigate(R.id.action_quizListFragment_to_quizCreateFragment)
+        }
+
         return binding.root
     }
 
+        override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater){
+            inflater.inflate(R.menu.menu_quiz_list, menu)
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()
