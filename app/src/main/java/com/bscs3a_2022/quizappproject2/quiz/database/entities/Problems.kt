@@ -17,9 +17,8 @@ data class Problems (
     @ColumnInfo(name = "problem_description")
     var description: String
 
-
-
-//    @ColumnInfo(name = "quality_rating")
-//    var sleepQuality: Int = -1
-
 )
+
+//data class ProblemsOfQuizSet(
+//
+//)

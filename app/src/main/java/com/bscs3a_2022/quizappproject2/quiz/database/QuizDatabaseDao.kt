@@ -5,6 +5,8 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
+import com.bscs3a_2022.quizappproject2.quiz.database.entities.Choices
+import com.bscs3a_2022.quizappproject2.quiz.database.entities.Problems
 import com.bscs3a_2022.quizappproject2.quiz.database.entities.QuizSet
 
 @Dao
@@ -30,5 +32,18 @@ interface QuizDatabaseDao {
 
     @Query("SELECT * FROM quiz_set_table ORDER BY quiz_set_id DESC")
     fun getAllQuizSetDesc(): LiveData<List<QuizSet>>
+    ///////////////////////////////////////////////
+
+    @Query(
+        "SELECT * FROM quiz_set_table" +
+        " JOIN quiz_set_problems_table ON quiz_set_id = problem_id"
+    )
+    fun getQuizSetAndItsProblems(): Map<QuizSet, List<Problems>>
+
+    @Query(
+        "SELECT * FROM quiz_set_problems_table" +
+                " JOIN quiz_set_problem_choices_table ON problem_id = choice_id"
+    )
+    fun getProblemAndItsChoices(): Map<Problems, List<Choices>>
 
 }
