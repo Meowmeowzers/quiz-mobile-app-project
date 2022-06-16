@@ -21,19 +21,26 @@ class QuizListViewModel (
             clear()
         }
     }
-    private fun getTonightFromDatabase(): QuizSet? {
-        return database.getRecentQuizSet()
-    }
-
-    private fun insert(quizSet: QuizSet) {
-        Timber.i("db process")
-        database.insertQuizSet(quizSet)
-    }
-    private fun update(quizSet: QuizSet) {
-        database.updateQuizSet(quizSet)
-    }
+//    private fun getRecentQuizFromDatabase(): QuizSet? {
+//        return database.getRecentQuizSet()
+//    }
+//    private fun insert(quizSet: QuizSet) {
+//        database.insertQuizSet(quizSet)
+//    }
+//    private fun update(quizSet: QuizSet) {
+//        database.updateQuizSet(quizSet)
+//    }
     private fun clear() {
-        Timber.i("db process")
         database.clearQuizSetDataBase()
+    }
+    //////////////////////////////////////////////////
+    private val _navigateToQuizDetails = MutableLiveData<Long>()
+    val navigateToQuizDetails get() = _navigateToQuizDetails
+
+    fun onQuizItemClicked(id:Long){
+        _navigateToQuizDetails.value = id
+    }
+    fun onQuizItemDetailNavigated() {
+        _navigateToQuizDetails.value = null
     }
 }

@@ -20,7 +20,6 @@ class QuizListFragment : Fragment() {
         super.onCreate(savedInstanceState)
         arguments?.let {
         }
-        setHasOptionsMenu(true)
     }
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,7 +36,9 @@ class QuizListFragment : Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
 
         binding.quizViewModel = viewModel
-        val adapter = QuizListAdapter()
+        val adapter = QuizListAdapter(QuizSetListener { quizSetId: Long ->
+            viewModel.onQuizItemClicked(quizSetId)
+        })
         binding.quizListRecycler.adapter = adapter
 
         viewModel.quizList.observe(viewLifecycleOwner) {
@@ -45,7 +46,13 @@ class QuizListFragment : Fragment() {
                 adapter.submitList(it)
             }
         }
-
+        viewModel.navigateToQuizDetails.observe(viewLifecycleOwner) { quiz ->
+            quiz?.let {
+                this.findNavController().navigate(
+                    QuizListFragmentDirections.actionQuizListFragmentToQuizProblemsListFragment())
+                viewModel.onQuizItemDetailNavigated()
+            }
+        }
         binding.addquizitem.setOnClickListener{
             findNavController().navigate(R.id.action_quizListFragment_to_quizCreateFragment)
         }

@@ -26,7 +26,7 @@ class QuizProblemsListFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = QuizProblemsBinding.inflate(inflater, container, false)
-        (activity as AppCompatActivity).supportActionBar?.title = "Quiz"
+        (activity as AppCompatActivity).supportActionBar?.title = "Quiz Problems"
 
         val application = requireNotNull(this.activity).application
         val dataSource = QuizDatabase.getInstance(application).quizSetDatabaseDao

@@ -35,6 +35,10 @@
         android:id="@+id/navitem_grp2"
         android:checkableBehavior="single">
         <item
+        android:id="@+id/quizProblemsListFragment"
+        android:title="@string/item_1"
+        android:icon="@drawable/ic_baseline_settings_24"/>
+        <item
             android:id="@+id/loginFragment"
             android:title="@string/account"
             android:icon="@drawable/ic_baseline_account_circle_24"/>

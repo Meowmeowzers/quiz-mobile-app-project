@@ -34,15 +34,28 @@ interface QuizDatabaseDao {
     fun getAllQuizSetDesc(): LiveData<List<QuizSet>>
     ///////////////////////////////////////////////
 
+    @Insert
+    fun insertProblem(problem: Problems)
+
+    @Update
+    fun updateProblem(problem: Problems)
+
+    @Query("DELETE FROM quiz_set_problems_table " +
+            "WHERE from_quiz_set = :id"
+    )
+    fun clearProblemsOfQuiz(id: Long)
+
     @Query(
-        "SELECT * FROM quiz_set_table" +
-        " JOIN quiz_set_problems_table ON quiz_set_id = problem_id"
+        "SELECT * FROM quiz_set_table " +
+        "JOIN quiz_set_problems_table ON quiz_set_id = problem_id"
     )
     fun getQuizSetAndItsProblems(): Map<QuizSet, List<Problems>>
 
+
+
     @Query(
-        "SELECT * FROM quiz_set_problems_table" +
-                " JOIN quiz_set_problem_choices_table ON problem_id = choice_id"
+        "SELECT * FROM quiz_set_problems_table " +
+        "JOIN quiz_set_problem_choices_table ON problem_id = choice_id"
     )
     fun getProblemAndItsChoices(): Map<Problems, List<Choices>>
 

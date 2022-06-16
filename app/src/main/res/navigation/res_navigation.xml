@@ -81,7 +81,11 @@
     <fragment
         android:id="@+id/quizProblemChoicesEditFragment"
         android:name="com.bscs3a_2022.quizappproject2.quiz.QuizProblemChoicesEditFragment"
-        android:label="QuizProblemChoicesEditFragment" />
+        android:label="QuizProblemChoicesEditFragment">
+        <argument
+            android:name="QuizId"
+            app:argType="long" />
+    </fragment>
     <fragment
         android:id="@+id/quizProblemsListFragment"
         android:name="com.bscs3a_2022.quizappproject2.quiz.QuizProblemsListFragment"

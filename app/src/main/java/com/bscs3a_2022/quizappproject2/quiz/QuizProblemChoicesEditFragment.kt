@@ -24,7 +24,7 @@ class QuizProblemChoicesEditFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = QuizProblemChoicesEditBinding.inflate(inflater, container, false)
-        (activity as AppCompatActivity).supportActionBar?.title = "Quiz"
+        (activity as AppCompatActivity).supportActionBar?.title = "Add/Edit Choice"
 
         val application = requireNotNull(this.activity).application
         val dataSource = QuizDatabase.getInstance(application).quizSetDatabaseDao
