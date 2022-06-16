@@ -9,16 +9,16 @@ import androidx.room.PrimaryKey
 data class QuizSet (
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo
+    @ColumnInfo(name = "quiz_set_id")
     val quizSetId: Long = 0L,
 
-    @ColumnInfo(name= "quiz_name")
+    @ColumnInfo(name= "quiz_set_name")
     var name: String,
 
-    @ColumnInfo(name= "quiz_description")
+    @ColumnInfo(name= "quiz_set_description")
     var description: String,
 
-    @ColumnInfo(name= "quiz_subject")
+    @ColumnInfo(name= "quiz_set_subject")
     var subject: String
 
 )

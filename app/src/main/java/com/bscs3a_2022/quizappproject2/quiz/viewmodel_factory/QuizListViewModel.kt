@@ -13,7 +13,7 @@ class QuizListViewModel (
     application: Application) : AndroidViewModel(application){
 
     private var quizSet = MutableLiveData<QuizSet?>()
-    val quizList = database.getAll()
+    val quizList = database.getAllQuizSetAsc()
 
     fun clearDb() {
         Timber.i("db process")
@@ -22,18 +22,18 @@ class QuizListViewModel (
         }
     }
     private fun getTonightFromDatabase(): QuizSet? {
-        return database.getRecentQuiz()
+        return database.getRecentQuizSet()
     }
 
     private fun insert(quizSet: QuizSet) {
         Timber.i("db process")
-        database.insert(quizSet)
+        database.insertQuizSet(quizSet)
     }
     private fun update(quizSet: QuizSet) {
-        database.update(quizSet)
+        database.updateQuizSet(quizSet)
     }
     private fun clear() {
         Timber.i("db process")
-        database.clear()
+        database.clearQuizSetDataBase()
     }
 }

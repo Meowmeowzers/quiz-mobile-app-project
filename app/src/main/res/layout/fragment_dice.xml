@@ -54,6 +54,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imageDice"
         app:layout_constraintVertical_bias="0.182"
+        style="@style/button_teal_1"
         tools:ignore="HardcodedText"
         android:onClick="@{() -> diceViewModel.rollDice()}"/>
 
@@ -68,6 +69,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rollbutton"
         app:layout_constraintVertical_bias="0.059"
+        style="@style/button_teal_1"
         tools:ignore="HardcodedText"
         android:onClick="@{() -> diceViewModel.add1()}"/>
 

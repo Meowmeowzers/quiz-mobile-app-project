@@ -8,7 +8,8 @@ import androidx.room.PrimaryKey
 data class Problems (
 
     @PrimaryKey(autoGenerate = true)
-    val quizSetId: Long = 0L,
+    @ColumnInfo(name = "problem_id")
+    val problemId: Long = 0L,
 
     @ColumnInfo(name = "from_quiz_set")
     var fromQuiz: Long,

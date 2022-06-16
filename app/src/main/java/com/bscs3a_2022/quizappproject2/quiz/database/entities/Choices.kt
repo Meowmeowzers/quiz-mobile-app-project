@@ -8,9 +8,10 @@ import androidx.room.PrimaryKey
 data class Choices (
 
     @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "choice_id")
     val quizItemId: Long = 0L,
 
-    @ColumnInfo(name = "from_quiz_set_problem")
+    @ColumnInfo(name = "from_problem")
     var fromProblem: Long ,
 
     @ColumnInfo(name = "choice_description")

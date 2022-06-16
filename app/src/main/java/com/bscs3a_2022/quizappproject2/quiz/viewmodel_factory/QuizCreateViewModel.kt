@@ -14,7 +14,7 @@ open class QuizCreateViewModel (
 ) : AndroidViewModel(application){
 
     private var quiz = MutableLiveData<QuizSet?>()
-    val quizList = database.getAll()
+    val quizList = database.getAllQuizSetAsc()
 
     fun createQuiz(quizName: String, quizDescription: String, subject: String) {
         viewModelScope.launch(Dispatchers.IO) {
@@ -30,18 +30,18 @@ open class QuizCreateViewModel (
     }
 
     private fun getTonightFromDatabase(): QuizSet? {
-        return database.getRecentQuiz()
+        return database.getRecentQuizSet()
     }
 
     private fun insert(quizSet: QuizSet) {
         Timber.i("db process")
-        database.insert(quizSet)
+        database.insertQuizSet(quizSet)
     }
     private fun update(quizSet: QuizSet) {
-        database.update(quizSet)
+        database.updateQuizSet(quizSet)
     }
     private fun clear() {
         Timber.i("db process")
-        database.clear()
+        database.clearQuizSetDataBase()
     }
 }

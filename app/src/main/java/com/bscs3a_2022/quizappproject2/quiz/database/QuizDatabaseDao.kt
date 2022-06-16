@@ -11,24 +11,24 @@ import com.bscs3a_2022.quizappproject2.quiz.database.entities.QuizSet
 interface QuizDatabaseDao {
 
     @Insert
-    fun insert(quiz: QuizSet)
+    fun insertQuizSet(quiz: QuizSet)
 
     @Update
-    fun update(quiz: QuizSet)
+    fun updateQuizSet(quiz: QuizSet)
 
-    @Query("SELECT * from quiz_set_table WHERE quizSetId = :key")
-    fun get(key: Long): QuizSet?
+    @Query("SELECT * from quiz_set_table WHERE quiz_set_id = :key")
+    fun getQuizSet(key: Long): QuizSet?
 
     @Query("DELETE FROM quiz_set_table")
-    fun clear()
+    fun clearQuizSetDataBase()
 
-    @Query("SELECT * FROM quiz_set_table ORDER BY quizSetId DESC LIMIT 1")
-    fun getRecentQuiz(): QuizSet?
+    @Query("SELECT * FROM quiz_set_table ORDER BY quiz_set_id ASC LIMIT 1")
+    fun getRecentQuizSet(): QuizSet?
 
-    @Query("SELECT * FROM quiz_set_table ORDER BY quizSetId DESC")
-    fun getAllQuizSets(): LiveData<List<QuizSet>>
+    @Query("SELECT * FROM quiz_set_table ORDER BY quiz_set_id ASC")
+    fun getAllQuizSetAsc(): LiveData<List<QuizSet>>
 
-    @Query("SELECT * FROM quiz_set_table")
-    fun getAll(): LiveData<List<QuizSet>>
+    @Query("SELECT * FROM quiz_set_table ORDER BY quiz_set_id DESC")
+    fun getAllQuizSetDesc(): LiveData<List<QuizSet>>
 
 }
