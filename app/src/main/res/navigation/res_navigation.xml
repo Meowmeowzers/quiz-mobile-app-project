@@ -70,6 +70,25 @@
     <fragment
         android:id="@+id/quizListFragment"
         android:name="com.bscs3a_2022.quizappproject2.quiz.QuizListFragment"
-        android:label="QuizListFragment" />
+        android:label="QuizListFragment" >
+        <action
+            android:id="@+id/action_quizListFragment_to_quizCreateFragment"
+            app:destination="@id/quizCreateFragment" />
+        <action
+            android:id="@+id/action_quizListFragment_to_quizProblemsListFragment"
+            app:destination="@id/quizProblemsListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizProblemChoicesEditFragment"
+        android:name="com.bscs3a_2022.quizappproject2.quiz.QuizProblemChoicesEditFragment"
+        android:label="QuizProblemChoicesEditFragment" />
+    <fragment
+        android:id="@+id/quizProblemsListFragment"
+        android:name="com.bscs3a_2022.quizappproject2.quiz.QuizProblemsListFragment"
+        android:label="QuizProblemsListFragment" >
+        <action
+            android:id="@+id/action_quizProblemsListFragment_to_quizProblemChoicesEditFragment"
+            app:destination="@id/quizProblemChoicesEditFragment" />
+    </fragment>
 
 </navigation>

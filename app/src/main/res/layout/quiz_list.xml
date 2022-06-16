@@ -20,7 +20,7 @@
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/quiz_recycler"
+        android:id="@+id/quiz_list_recycler"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -37,7 +37,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        android:contentDescription="Add a quiz item"
+        android:contentDescription="@string/add_a_quiz_item"
         android:minWidth="48dp"
         android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="parent"

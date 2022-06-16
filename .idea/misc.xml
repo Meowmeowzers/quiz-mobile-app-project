@@ -44,6 +44,7 @@
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/layout_appbar.xml" value="0.31875" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/navbar.xml" value="0.75" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/navdrawer.xml" value="0.2916666666666667" />
+        <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/problem_choices_edit.xml" value="0.1" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz/fragment_quiz_create.xml" value="0.31875" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_create.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_item_card_list.xml" value="0.33" />
@@ -52,6 +53,8 @@
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_list.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_list_card.xml" value="0.33" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_list_recyler.xml" value="0.22447916666666667" />
+        <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_problem_choices_edit.xml" value="0.25" />
+        <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_problems.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/view_quiz.xml" value="0.31875" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/menu/menu_main.xml" value="0.2125" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/menu/menu_navdrawer.xml" value="0.33" />
