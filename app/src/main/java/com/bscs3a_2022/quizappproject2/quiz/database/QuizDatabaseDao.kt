@@ -53,7 +53,7 @@ interface QuizDatabaseDao {
         "SELECT * FROM quiz_set_table " +
         "JOIN quiz_set_problems_table ON quiz_set_id = problem_id"
     )
-    fun getQuizSetAndItsProblems(): Map<QuizSet, List<Problems>>
+    fun getQuizSetAndItsProblems(): Map<QuizSet, LiveData<List<Problems>>>
 
     @Transaction
     @Query("SELECT * FROM quiz_set_table")
