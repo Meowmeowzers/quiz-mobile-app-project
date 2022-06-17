@@ -41,6 +41,9 @@ interface QuizDatabaseDao {
     @Query("SELECT * FROM quiz_set_problems_table ORDER BY problem_id ASC")
     fun getAllProblems(): LiveData<List<Problems>>
 
+    @Query("DELETE FROM quiz_set_problems_table")
+    fun clearAllProblemsOfQuiz()
+
     @Query("DELETE FROM quiz_set_problems_table " +
             "WHERE from_quiz_set = :id"
     )

@@ -91,5 +91,18 @@
             app:layout_constraintTop_toBottomOf="@+id/editTextQuizDescription"
             app:layout_constraintVertical_bias="0.0" />
 
+        <Button
+            android:id="@+id/buttonClearProblems"
+            style="@style/button_teal_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/clear"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.308"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonClear"
+            app:layout_constraintVertical_bias="0.04" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

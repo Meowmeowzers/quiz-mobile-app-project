@@ -44,6 +44,9 @@ class QuizCreateFragment : Fragment() {
         binding.buttonClear.setOnClickListener {
             viewModel.clearDb()
         }
+        binding.buttonClearProblems.setOnClickListener {
+            viewModel.clearProblemsDb()
+        }
 
         return binding.root
     }

@@ -28,6 +28,12 @@ open class QuizCreateViewModel (
             clear()
         }
     }
+    fun clearProblemsDb() {
+        Timber.i("db process")
+        viewModelScope.launch(Dispatchers.IO) {
+            clearProblems()
+        }
+    }
 
     private fun getTonightFromDatabase(): QuizSet? {
         return database.getRecentQuizSet()
@@ -43,5 +49,9 @@ open class QuizCreateViewModel (
     private fun clear() {
         Timber.i("db process")
         database.clearQuizSetDataBase()
+    }
+    private fun clearProblems() {
+        Timber.i("db process")
+        database.clearAllProblemsOfQuiz()
     }
 }
