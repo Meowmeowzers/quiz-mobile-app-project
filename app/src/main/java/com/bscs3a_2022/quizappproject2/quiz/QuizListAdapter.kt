@@ -8,9 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bscs3a_2022.quizappproject2.databinding.QuizListCardBinding
 import com.bscs3a_2022.quizappproject2.quiz.database.entities.QuizSet
 
-class QuizListAdapter(private val clickListener: QuizSetListener)
+class QuizListAdapter(val clickListener: QuizSetListener)
     : ListAdapter<QuizSet,QuizListAdapter.ViewHolder>(QuizListDiffCallback()) {
 
+    var itemId = 0L
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder.from(parent)
     }
@@ -49,5 +50,7 @@ class QuizListDiffCallback : DiffUtil.ItemCallback<QuizSet>() {
 }
 
 class QuizSetListener(val clickListener: (quizSetId: Long) -> Unit) {
-    fun onClick(quiz: QuizSet) = clickListener(quiz.quizSetId)
+    fun onClick(quiz: QuizSet){
+        clickListener(quiz.quizSetId)
+    }
 }

@@ -55,7 +55,7 @@
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_list_recyler.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_problem_choices_edit.xml" value="0.25" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_problem_create.xml" value="0.33671875" />
-        <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_problem_list_card.xml" value="0.33671875" />
+        <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_problem_list_card.xml" value="0.5" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_problems.xml" value="0.33" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/view_quiz.xml" value="0.31875" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/menu/menu_main.xml" value="0.2125" />
@@ -74,7 +74,7 @@
   <component name="VisualizationToolProject">
     <option name="state">
       <ProjectState>
-        <option name="scale" value="0.33" />
+        <option name="scale" value="0.5" />
       </ProjectState>
     </option>
   </component>
