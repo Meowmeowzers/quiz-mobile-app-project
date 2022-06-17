@@ -1,6 +1,7 @@
 package com.bscs3a_2022.quizappproject2.quiz.database
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
@@ -39,6 +40,9 @@ interface QuizDatabaseDao {
 
     @Update
     fun updateProblem(problem: Problems)
+
+    @Query("SELECT * FROM quiz_set_problems_table ORDER BY problem_id ASC")
+    fun getAllProblems(): LiveData<List<Problems>>
 
     @Query("DELETE FROM quiz_set_problems_table " +
             "WHERE from_quiz_set = :id"

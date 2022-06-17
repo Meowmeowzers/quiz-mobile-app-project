@@ -83,13 +83,16 @@
         android:name="com.bscs3a_2022.quizappproject2.quiz.QuizProblemChoicesEditFragment"
         android:label="QuizProblemChoicesEditFragment">
         <argument
-            android:name="QuizId"
+            android:name="Problem"
             app:argType="long" />
     </fragment>
     <fragment
         android:id="@+id/quizProblemsListFragment"
         android:name="com.bscs3a_2022.quizappproject2.quiz.QuizProblemsListFragment"
         android:label="QuizProblemsListFragment" >
+        <argument
+            android:name="QuizId"
+            app:argType="long"/>
         <action
             android:id="@+id/action_quizProblemsListFragment_to_quizProblemChoicesEditFragment"
             app:destination="@id/quizProblemChoicesEditFragment" />

@@ -2,6 +2,7 @@ package com.bscs3a_2022.quizappproject2.quiz
 
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
+import com.bscs3a_2022.quizappproject2.quiz.database.entities.Problems
 import com.bscs3a_2022.quizappproject2.quiz.database.entities.QuizSet
 
     @BindingAdapter("quizTitle")
@@ -17,6 +18,10 @@ import com.bscs3a_2022.quizappproject2.quiz.database.entities.QuizSet
         text = item.description
     }
 
+    @BindingAdapter("problemDescription")
+    fun TextView.setProblemDescription(item: Problems){
+        text = item.description
+    }
 //    private fun quizTitleFormat(quizName: String): String {
 //        return quizName
 //    }
