@@ -1,13 +1,10 @@
 package com.bscs3a_2022.quizappproject2.quiz.database
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.Query
-import androidx.room.Update
+import androidx.room.*
 import com.bscs3a_2022.quizappproject2.quiz.database.entities.Choices
 import com.bscs3a_2022.quizappproject2.quiz.database.entities.Problems
+import com.bscs3a_2022.quizappproject2.quiz.database.entities.ProblemsFromQuizSet
 import com.bscs3a_2022.quizappproject2.quiz.database.entities.QuizSet
 
 @Dao
@@ -55,7 +52,9 @@ interface QuizDatabaseDao {
     )
     fun getQuizSetAndItsProblems(): Map<QuizSet, List<Problems>>
 
-
+    @Transaction
+    @Query("SELECT * FROM quiz_set_table")
+    fun getProblemsFromQuizSet(): List<ProblemsFromQuizSet>
 
     @Query(
         "SELECT * FROM quiz_set_problems_table " +

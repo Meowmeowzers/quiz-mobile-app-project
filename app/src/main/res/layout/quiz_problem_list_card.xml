@@ -5,6 +5,9 @@
 
     <data>
         <variable
+            name="problemsOfQuiz"
+            type="com.bscs3a_2022.quizappproject2.quiz.database.entities.ProblemsFromQuizSet" />
+        <variable
             name="problem"
             type="com.bscs3a_2022.quizappproject2.quiz.database.entities.Problems" />
         <variable

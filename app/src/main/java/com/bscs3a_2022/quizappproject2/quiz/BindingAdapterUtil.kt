@@ -17,19 +17,19 @@ import com.bscs3a_2022.quizappproject2.quiz.database.entities.QuizSet
     fun TextView.setQuizDescriptionString(item: QuizSet){
         text = item.description
     }
-
+/*---------------------------------------------------------------*/
+    @BindingAdapter("problemId")
+    fun TextView.setProblemId(item: Problems){
+        text = item.problemId.toString()
+    }
+    @BindingAdapter("problemFromQuiz")
+    fun TextView.setProblemFromQuiz(item: Problems){
+        text = item.fromQuiz.toString()
+    }
     @BindingAdapter("problemDescription")
     fun TextView.setProblemDescription(item: Problems){
         text = item.description
     }
-//    private fun quizTitleFormat(quizName: String): String {
-//        return quizName
-//    }
-//    private fun quizSubjectFormat(quizSubject: String): String {
-//        return quizSubject
-//    }
-//    private fun quizDescriptionFormat(quizDescription: String): String {
-//        return quizDescription
-//    }
+
 
 

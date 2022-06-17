@@ -8,8 +8,10 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.bscs3a_2022.quizappproject2.quiz.database.QuizDatabaseDao
 import com.bscs3a_2022.quizappproject2.quiz.database.entities.Problems
+import com.bscs3a_2022.quizappproject2.quiz.database.entities.ProblemsFromQuizSet
 import com.bscs3a_2022.quizappproject2.quiz.database.entities.QuizSet
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
@@ -18,13 +20,23 @@ class QuizProblemsListViewModel (
     application: Application
 ) : AndroidViewModel(application){
 
-    val listofProblems = database.getAllProblems()
+    var listofProblems = database.getAllProblems()
+    val listOfProblemsFromQuizset = getAllProblemsFrom()
     //val quizProblemList = database.getQuizSetAndItsProblems()
 //    val quizProblemListz get() =  MutableLiveData(quizProblemList.toList())
 
-    fun getAllProblems(){
+    fun getAllProblems1(): LiveData<List<Problems>> {
+        lateinit var x: LiveData<List<Problems>>
         viewModelScope.launch(Dispatchers.IO) {
-            database.getAllProblems()
+            val y = database.getAllProblems()
+            x = y
+        }
+        return x
+    }
+
+    fun getAllProblemsFrom() {
+        viewModelScope.launch(Dispatchers.IO) {
+            database.getProblemsFromQuizSet()
         }
     }
     fun createProblem(fromQuiz: Long, description: String) {
