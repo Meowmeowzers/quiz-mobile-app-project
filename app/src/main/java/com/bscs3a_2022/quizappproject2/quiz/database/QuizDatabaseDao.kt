@@ -38,22 +38,64 @@ interface QuizDatabaseDao {
     @Update
     fun updateProblem(problem: Problems)
 
+    @Query("SELECT * from quiz_set_problems_table WHERE problem_id = :key")
+    fun getProblem(key: Long): LiveData<Problems>
+
     @Query("SELECT * FROM quiz_set_problems_table ORDER BY problem_id ASC")
     fun getAllProblems(): LiveData<List<Problems>>
 
     @Query("DELETE FROM quiz_set_problems_table")
     fun clearAllProblemsOfQuiz()
 
+    @Query("SELECT * FROM quiz_set_problems_table " +
+            "WHERE from_quiz_set = :id"
+    )
+    fun getProblemsOfQuiz(id: Long):LiveData<List<Problems>>
+
     @Query("DELETE FROM quiz_set_problems_table " +
             "WHERE from_quiz_set = :id"
     )
     fun clearProblemsOfQuiz(id: Long)
 
+//////////////////////////
+
+    @Insert
+    fun insertChoice(choices: Choices)
+
+    @Update
+    fun updateChoice(choices: Choices)
+
+    @Query("SELECT * FROM quiz_set_problem_choices_table ORDER BY choice_id ASC")
+    fun getAllChoiceAsc(): LiveData<List<Choices>>
+
+    @Query("SELECT * FROM quiz_set_problem_choices_table ORDER BY choice_id DESC")
+    fun getAllChoiceDesc(): LiveData<List<Choices>>
+
+    @Query("SELECT * from quiz_set_problem_choices_table WHERE choice_id = :key")
+    fun getChoice(key: Long): Choices?
+
+    @Query("SELECT * FROM quiz_set_problem_choices_table ORDER BY choice_id ASC LIMIT 1")
+    fun getRecentChoice(): Choices?
+
+    @Query("SELECT * FROM quiz_set_problem_choices_table " +
+            "WHERE from_problem = :id"
+    )
+    fun getChoicesOfProblem(id: Long):LiveData<List<Choices>>
+
+    @Query("DELETE from quiz_set_problem_choices_table WHERE choice_id = :key")
+    fun clearAChoice(key: Long)
+
+    @Query("DELETE FROM quiz_set_problem_choices_table")
+    fun clearChoiceDataBase()
+
+
+/////////////////////////////////////////////////////////////////////////
+
     @Query(
         "SELECT * FROM quiz_set_table " +
-        "JOIN quiz_set_problems_table ON quiz_set_id = problem_id"
+                "JOIN quiz_set_problems_table ON quiz_set_id = problem_id"
     )
-    fun getQuizSetAndItsProblems(): Map<QuizSet, LiveData<List<Problems>>>
+    fun getQuizSetAndItsProblems(): Map<QuizSet, List<Problems>>
 
     @Transaction
     @Query("SELECT * FROM quiz_set_table")
@@ -61,8 +103,9 @@ interface QuizDatabaseDao {
 
     @Query(
         "SELECT * FROM quiz_set_problems_table " +
-        "JOIN quiz_set_problem_choices_table ON problem_id = choice_id"
+                "JOIN quiz_set_problem_choices_table ON problem_id = choice_id"
     )
     fun getProblemAndItsChoices(): Map<Problems, List<Choices>>
+
 
 }

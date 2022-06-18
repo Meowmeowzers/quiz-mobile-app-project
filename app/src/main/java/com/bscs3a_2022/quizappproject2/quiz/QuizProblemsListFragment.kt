@@ -4,8 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.bscs3a_2022.quizappproject2.databinding.QuizProblemsBinding
@@ -13,7 +15,6 @@ import com.bscs3a_2022.quizappproject2.quiz.database.QuizDatabase
 import com.bscs3a_2022.quizappproject2.quiz.viewmodel_factory.QuizProblemListViewModelFactory
 import com.bscs3a_2022.quizappproject2.quiz.viewmodel_factory.QuizProblemsListViewModel
 import com.bscs3a_2022.quizappproject2.quiz.viewmodel_factory.ShareViewModel
-import com.bscs3a_2022.quizappproject2.quiz.viewmodel_factory.ShareViewModelFactory
 
 
 class QuizProblemsListFragment: Fragment() {
@@ -33,22 +34,25 @@ class QuizProblemsListFragment: Fragment() {
         _binding = QuizProblemsBinding.inflate(inflater, container, false)
         (activity as AppCompatActivity).supportActionBar?.title = "Quiz Problems"
 
+        val sharedViewModel: ShareViewModel by activityViewModels()
         val application = requireNotNull(this.activity).application
         val dataSource = QuizDatabase.getInstance(application).quizSetDatabaseDao
-        val viewModelFactory = QuizProblemListViewModelFactory(dataSource, application)
+        val viewModelFactory = QuizProblemListViewModelFactory(dataSource, application, sharedViewModel.id)
         val viewModel =
             ViewModelProvider(this, viewModelFactory)[QuizProblemsListViewModel::class.java]
-        val viewModelFactory2 = ShareViewModelFactory(dataSource, application)
-        val shareViewModel =
-            ViewModelProvider(this, viewModelFactory2)[ShareViewModel::class.java]
 
         binding.lifecycleOwner = viewLifecycleOwner
-
         binding.problemsListViewModel = viewModel
+
         val adapter = QuizProblemListAdapter(ProblemItemListener { problem: Long ->
+            sharedViewModel.setNewProblemId(problem)
             viewModel.onProblemItemClicked(problem)
+
         })
+
         binding.quizProblemsRecycler.adapter = adapter
+
+        viewModel.selectedId = sharedViewModel.id
 
         viewModel.listofProblems.observe(viewLifecycleOwner) {
             it?.let {
@@ -64,8 +68,9 @@ class QuizProblemsListFragment: Fragment() {
             }
         }
         binding.addquizproblem.setOnClickListener {
+            Toast.makeText(context, sharedViewModel.id.toString(), Toast.LENGTH_SHORT).show()
             val problemDescription = binding.editTextCreateProblemDescription.text.toString()
-            viewModel.createProblem(shareViewModel.quizId,problemDescription)
+            viewModel.createProblem(sharedViewModel.id ,problemDescription)
 //            findNavController().navigate(R.id.action_quizCreateFragment_to_quizListFragment)
         }
         return binding.root

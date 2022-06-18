@@ -16,7 +16,6 @@ class QuizListViewModel (
     private var quizSet = MutableLiveData<QuizSet?>()
     val quizList = database.getAllQuizSetAsc()
 
-    var quizId = 0L
     fun clearDb() {
         Timber.i("db process")
         viewModelScope.launch(Dispatchers.IO) {

@@ -80,7 +80,7 @@
     </fragment>
     <fragment
         android:id="@+id/quizProblemChoicesEditFragment"
-        android:name="com.bscs3a_2022.quizappproject2.quiz.QuizProblemChoicesEditFragment"
+        android:name="com.bscs3a_2022.quizappproject2.quiz.ProblemChoicesEditFragment"
         android:label="QuizProblemChoicesEditFragment">
         <argument
             android:name="Problem"
@@ -90,9 +90,6 @@
         android:id="@+id/quizProblemsListFragment"
         android:name="com.bscs3a_2022.quizappproject2.quiz.QuizProblemsListFragment"
         android:label="QuizProblemsListFragment" >
-        <argument
-            android:name="QuizId"
-            app:argType="long"/>
         <action
             android:id="@+id/action_quizProblemsListFragment_to_quizProblemChoicesEditFragment"
             app:destination="@id/quizProblemChoicesEditFragment" />

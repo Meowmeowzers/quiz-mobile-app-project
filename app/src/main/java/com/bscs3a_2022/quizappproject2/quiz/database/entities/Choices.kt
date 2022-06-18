@@ -9,7 +9,7 @@ data class Choices (
 
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "choice_id")
-    val quizItemId: Long = 0L,
+    val choiceId: Long = 0L,
 
     @ColumnInfo(name = "from_problem")
     var fromProblem: Long ,
@@ -17,12 +17,6 @@ data class Choices (
     @ColumnInfo(name = "choice_description")
     var description: String,
 
-    @ColumnInfo(name = "choice_answer")
-    var answer: Int
 
-
-
-//    @ColumnInfo(name = "quality_rating")
-//    var sleepQuality: Int = -1
 
 )

@@ -1,6 +1,5 @@
 package com.bscs3a_2022.quizappproject2.quiz.viewmodel_factory
 
-import android.accounts.AuthenticatorDescription
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
@@ -8,37 +7,25 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
 import com.bscs3a_2022.quizappproject2.quiz.database.QuizDatabaseDao
 import com.bscs3a_2022.quizappproject2.quiz.database.entities.Problems
-import com.bscs3a_2022.quizappproject2.quiz.database.entities.ProblemsFromQuizSet
-import com.bscs3a_2022.quizappproject2.quiz.database.entities.QuizSet
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
 class QuizProblemsListViewModel (
     val database: QuizDatabaseDao,
-    application: Application
+    application: Application,
+    id: Long
 ) : AndroidViewModel(application){
 
-    var listofProblems = database.getAllProblems()
-    val listOfProblemsFromQuizset = getAllProblemsFrom()
-    //val quizProblemList = database.getQuizSetAndItsProblems()
-//    val quizProblemListz get() =  MutableLiveData(quizProblemList.toList())
+    private var _listofProblems: LiveData<List<Problems>>
+    var listofProblems: LiveData<List<Problems>>
+    var selectedId: Long = 0L
 
-    fun getAllProblems1(): LiveData<List<Problems>> {
-        lateinit var x: LiveData<List<Problems>>
-        viewModelScope.launch(Dispatchers.IO) {
-            val y = database.getAllProblems()
-            x = y
-        }
-        return x
+    init{
+        _listofProblems = database.getProblemsOfQuiz(id)
+        listofProblems = _listofProblems
     }
 
-    fun getAllProblemsFrom() {
-        viewModelScope.launch(Dispatchers.IO) {
-            database.getProblemsFromQuizSet()
-        }
-    }
     fun createProblem(fromQuiz: Long, description: String) {
         viewModelScope.launch(Dispatchers.IO) {
             val newProblems = Problems(0,fromQuiz,description)
@@ -56,20 +43,7 @@ class QuizProblemsListViewModel (
 
         }
     }
-//    private fun getTonightFromDatabase(): QuizSet? {
-//        return database.getRecentQuizSet()
-//    }
-//    private fun insert(quizSet: QuizSet) {
-//        Timber.i("db process")
-//        database.insertQuizSet(quizSet)
-//    }
-//    private fun update(quizSet: QuizSet) {
-//        database.updateQuizSet(quizSet)
-//    }
-//    private fun clear() {
-//        Timber.i("db process")
-//        database.clearQuizSetDataBase()
-//    }
+
     private val _navigateToProblemChoicesDetails = MutableLiveData<Long>()
     val navigateToProblemChoicesDetails get() = _navigateToProblemChoicesDetails
 
@@ -79,4 +53,5 @@ class QuizProblemsListViewModel (
     fun onProblemItemNavigated() {
         _navigateToProblemChoicesDetails.value = null
     }
+
 }
