@@ -1,4 +1,4 @@
-package com.bscs3a_2022.quizappproject2.quiz
+package com.bscs3a_2022.quizappproject2.quiz.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -9,7 +9,7 @@ import com.bscs3a_2022.quizappproject2.databinding.QuizProblemListCardBinding
 import com.bscs3a_2022.quizappproject2.quiz.database.entities.Problems
 
 class QuizProblemListAdapter(private val clickListener: ProblemItemListener)
-    : ListAdapter<Problems,QuizProblemListAdapter.ViewHolder>(ProblemListDiffCallback()) {
+    : ListAdapter<Problems, QuizProblemListAdapter.ViewHolder>(ProblemListDiffCallback()) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder.from(parent)

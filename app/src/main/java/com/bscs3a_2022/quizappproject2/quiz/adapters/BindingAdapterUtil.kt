@@ -1,13 +1,12 @@
-package com.bscs3a_2022.quizappproject2.quiz
+package com.bscs3a_2022.quizappproject2.quiz.adapters
 
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
-import androidx.databinding.InverseBindingAdapter
 import com.bscs3a_2022.quizappproject2.quiz.database.entities.Choices
 import com.bscs3a_2022.quizappproject2.quiz.database.entities.Problems
 import com.bscs3a_2022.quizappproject2.quiz.database.entities.QuizSet
 
-    @BindingAdapter("quizTitle")
+@BindingAdapter("quizTitle")
     fun TextView.setQuizTitleString(item: QuizSet){
        text = item.name
     }

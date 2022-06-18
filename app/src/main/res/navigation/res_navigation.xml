@@ -94,5 +94,34 @@
             android:id="@+id/action_quizProblemsListFragment_to_quizProblemChoicesEditFragment"
             app:destination="@id/quizProblemChoicesEditFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/quizTakeList"
+        android:name="com.bscs3a_2022.quizappproject2.quiz.QuizTakeList"
+        android:label="quiz_take_list"
+        tools:layout="@layout/quiz_take_list" >
+        <action
+            android:id="@+id/action_quizTakeList_to_quizTakeActive"
+            app:destination="@id/quizTakeActive" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizTakeActive"
+        android:name="com.bscs3a_2022.quizappproject2.quiz.QuizTakeActive"
+        android:label="QuizTakeActive" >
+        <action
+            android:id="@+id/action_quizTakeActive_to_quizTakeResult"
+            app:destination="@id/quizTakeResult" />
+        <action
+            android:id="@+id/action_quizTakeActive_to_quizTakeList"
+            app:destination="@id/quizTakeList" />
+    </fragment>
+    <fragment
+        android:id="@+id/quizTakeResult"
+        android:name="com.bscs3a_2022.quizappproject2.quiz.QuizTakeResult"
+        android:label="quiz_take_result"
+        tools:layout="@layout/quiz_take_result" >
+        <action
+            android:id="@+id/action_quizTakeResult_to_quizTakeList"
+            app:destination="@id/quizTakeList" />
+    </fragment>
 
 </navigation>

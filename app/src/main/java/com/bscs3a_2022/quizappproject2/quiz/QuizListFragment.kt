@@ -12,6 +12,8 @@ import androidx.navigation.fragment.findNavController
 import com.bscs3a_2022.quizappproject2.R
 import com.bscs3a_2022.quizappproject2.quiz.database.QuizDatabase
 import com.bscs3a_2022.quizappproject2.databinding.QuizListBinding
+import com.bscs3a_2022.quizappproject2.quiz.adapters.QuizListAdapter
+import com.bscs3a_2022.quizappproject2.quiz.adapters.QuizSetListener
 import com.bscs3a_2022.quizappproject2.quiz.viewmodel_factory.QuizListViewModel
 import com.bscs3a_2022.quizappproject2.quiz.viewmodel_factory.QuizListViewModelFactory
 import com.bscs3a_2022.quizappproject2.quiz.viewmodel_factory.ShareViewModel

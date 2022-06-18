@@ -2,7 +2,6 @@ package com.bscs3a_2022.quizappproject2.quiz.viewmodel_factory
 
 import android.app.Application
 import androidx.lifecycle.*
-import com.bscs3a_2022.quizappproject2.quiz.QuizListAdapter
 import com.bscs3a_2022.quizappproject2.quiz.database.QuizDatabaseDao
 import com.bscs3a_2022.quizappproject2.quiz.database.entities.QuizSet
 import kotlinx.coroutines.Dispatchers

@@ -11,6 +11,8 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.bscs3a_2022.quizappproject2.databinding.QuizProblemsBinding
+import com.bscs3a_2022.quizappproject2.quiz.adapters.ProblemItemListener
+import com.bscs3a_2022.quizappproject2.quiz.adapters.QuizProblemListAdapter
 import com.bscs3a_2022.quizappproject2.quiz.database.QuizDatabase
 import com.bscs3a_2022.quizappproject2.quiz.viewmodel_factory.QuizProblemListViewModelFactory
 import com.bscs3a_2022.quizappproject2.quiz.viewmodel_factory.QuizProblemsListViewModel

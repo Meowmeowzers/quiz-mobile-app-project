@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import com.bscs3a_2022.quizappproject2.databinding.QuizProblemChoicesEditBinding
+import com.bscs3a_2022.quizappproject2.quiz.adapters.ChoiceItemListener
+import com.bscs3a_2022.quizappproject2.quiz.adapters.ProblemChoicesEditAdapter
 import com.bscs3a_2022.quizappproject2.quiz.database.QuizDatabase
 import com.bscs3a_2022.quizappproject2.quiz.viewmodel_factory.*
 

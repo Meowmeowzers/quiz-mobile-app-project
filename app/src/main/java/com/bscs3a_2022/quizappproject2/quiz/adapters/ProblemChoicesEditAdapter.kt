@@ -1,4 +1,4 @@
-package com.bscs3a_2022.quizappproject2.quiz
+package com.bscs3a_2022.quizappproject2.quiz.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

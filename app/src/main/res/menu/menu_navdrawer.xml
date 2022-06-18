@@ -14,11 +14,11 @@
         <item
             android:id="@+id/quizListFragment"
             android:title="@string/add_edit_a_quiz"
-            android:icon="@drawable/ic_baseline_question_answer_24"/>
-        <item
-            android:id="@+id/placeholder"
-            android:title="@string/take_quiz"
             android:icon="@drawable/ic_baseline_chat_24"/>
+        <item
+            android:id="@+id/quizTakeList"
+            android:title="@string/take_quiz"
+            android:icon="@drawable/ic_baseline_question_answer_24" />
         <item
             android:id="@+id/firstFragment"
             android:name="com.bscs3a_2022.quizappproject2.FirstFragment"
