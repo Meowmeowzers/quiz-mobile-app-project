@@ -8,12 +8,8 @@
         android:id="@+id/navitem_grp1"
         android:checkableBehavior="single">
         <item
-            android:id="@+id/quizCreateFragment"
-            android:title="@string/create_quiz"
-            android:icon="@drawable/ic_baseline_add_24"/>
-        <item
             android:id="@+id/quizListFragment"
-            android:title="@string/add_edit_a_quiz"
+            android:title="@string/create_edit_a_quiz"
             android:icon="@drawable/ic_baseline_chat_24"/>
         <item
             android:id="@+id/quizTakeList"
@@ -25,27 +21,14 @@
             android:title="@string/subjects"
             android:icon="@drawable/ic_baseline_menu_book_24"/>
         <item
-            android:id="@+id/notificationsFragment"
-            android:title="@string/notifications"
-            android:icon="@drawable/ic_baseline_notifications_24"/>
-        <item
-            android:id="@+id/diceFragment"
-            android:title="Dice"
-            android:icon="@drawable/svgrepo_com_dice"
-            tools:ignore="HardcodedText" />
+            android:id="@+id/loginFragment"
+            android:title="@string/account"
+            android:icon="@drawable/ic_baseline_account_circle_24"/>
     </group>
 
     <group
         android:id="@+id/navitem_grp2"
         android:checkableBehavior="single">
-        <item
-        android:id="@+id/quizProblemsListFragment"
-        android:title="@string/item_1"
-        android:icon="@drawable/ic_baseline_settings_24"/>
-        <item
-            android:id="@+id/loginFragment"
-            android:title="@string/account"
-            android:icon="@drawable/ic_baseline_account_circle_24"/>
         <item
             android:id="@+id/aboutFragment"
             android:icon="@drawable/ic_baseline_info_24"
@@ -62,6 +45,19 @@
             android:id="@+id/nav_9"
             android:icon="@drawable/ic_baseline_school_24"
             android:title="@string/visit_nvsu_online" />
+    </group>
+    <group
+        android:id="@+id/navitem_grp3"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/diceFragment"
+            android:title="Dice"
+            android:icon="@drawable/svgrepo_com_dice"
+            tools:ignore="HardcodedText" />
+        <item
+            android:id="@+id/notificationsFragment"
+            android:title="@string/notifications"
+            android:icon="@drawable/ic_baseline_notifications_24"/>
         <item
             android:id="@+id/affirmationsFragment"
             android:icon="@drawable/ic_baseline_settings_24"

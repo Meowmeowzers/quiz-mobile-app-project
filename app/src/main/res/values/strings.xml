@@ -52,7 +52,7 @@
     <string name="problem_description">Problem Description</string>
     <string name="clear_all_quiz_set">Clear all Quiz Set</string>
     <string name="delete">Delete</string>
-    <string name="add_edit_a_quiz">Add/Edit a Quiz</string>
+    <string name="create_edit_a_quiz">Create/Edit a Quiz</string>
     <string name="take_quiz">Take Quiz</string>
     <string name="pass_answers">Pass Answers</string>
 </resources>

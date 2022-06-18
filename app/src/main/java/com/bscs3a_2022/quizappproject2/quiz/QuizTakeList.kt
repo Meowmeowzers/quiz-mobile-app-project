@@ -2,12 +2,16 @@ package com.bscs3a_2022.quizappproject2.quiz
 
 import android.os.Bundle
 import android.view.*
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.bscs3a_2022.quizappproject2.R
 import com.bscs3a_2022.quizappproject2.databinding.QuizTakeListBinding
+import com.bscs3a_2022.quizappproject2.quiz.adapters.QuizSetTakeItemListener
+import com.bscs3a_2022.quizappproject2.quiz.adapters.QuizTakeListAdapter
 import com.bscs3a_2022.quizappproject2.quiz.database.QuizDatabase
 import com.bscs3a_2022.quizappproject2.quiz.viewmodel_factory.*
 
@@ -34,29 +38,29 @@ class QuizTakeList : Fragment() {
             ViewModelProvider(this, viewModelFactory)[QuizTakeListViewModel::class.java]
         val shareViewModel: ShareViewModel by activityViewModels()
 
-//        binding.lifecycleOwner = viewLifecycleOwner
-//
-//        binding.quizViewModel = viewModel
-//        val adapter = QuizListAdapter(QuizSetListener { quizSetId: Long ->
-//            shareViewModel.setNewId(quizSetId)
-//            viewModel.onQuizItemClicked(quizSetId)
-//        })
-//
-//        binding.quizListRecycler.adapter = adapter
-//
-//        viewModel.quizList.observe(viewLifecycleOwner) {
-//            it?.let {
-//                adapter.submitList(it)
-//            }
-//        }
-//        viewModel.navigateToQuizDetails.observe(viewLifecycleOwner) { quiz ->
-//            quiz?.let {
-//                this.findNavController().navigate(
-//                    QuizListFragmentDirections.actionQuizListFragmentToQuizProblemsListFragment())
-//                viewModel.onQuizItemDetailNavigated()
-//                Toast.makeText(context, shareViewModel.id.toString(), Toast.LENGTH_SHORT).show()
-//            }
-//        }
+        binding.lifecycleOwner = viewLifecycleOwner
+        binding.viewModel = viewModel
+
+        val adapter = QuizTakeListAdapter(QuizSetTakeItemListener { quizSetId: Long ->
+            shareViewModel.setNewId(quizSetId)
+            viewModel.onQuizItemClicked(quizSetId)
+        })
+
+        binding.quizTakeListRecycler.adapter = adapter
+
+        viewModel.quizList.observe(viewLifecycleOwner) {
+            it?.let {
+                adapter.submitList(it)
+            }
+        }
+        viewModel.navigateToQuizTake.observe(viewLifecycleOwner) { quiz ->
+            quiz?.let {
+                this.findNavController().navigate(
+                    QuizTakeListDirections.actionQuizTakeListToQuizTakeActive())
+                viewModel.onQuizItemDetailNavigated()
+                Toast.makeText(context, shareViewModel.id.toString(), Toast.LENGTH_SHORT).show()
+            }
+        }
 //        binding.addquizitem.setOnClickListener{
 //            findNavController().navigate(R.id.action_quizListFragment_to_quizCreateFragment)
 //        }

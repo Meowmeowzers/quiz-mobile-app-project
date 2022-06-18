@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="quiz"
+            type="com.bscs3a_2022.quizappproject2.quiz.database.entities.QuizSet" />
+        <variable
+            name="clickListener"
+            type="com.bscs3a_2022.quizappproject2.quiz.adapters.QuizSetTakeItemListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/teal_200"
+        android:layout_margin="2dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> clickListener.onClick(quiz)}">
+
+        <ImageView
+            android:id="@+id/quiz_image"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:src="@drawable/ic_baseline_menu_book_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.466"
+            tools:ignore="ContentDescription"
+            tools:srcCompat="@drawable/ic_baseline_menu_book_24" />
+
+        <TextView
+            android:id="@+id/quiz_title"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:textAllCaps="true"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/quiz_image"
+            app:layout_constraintTop_toTopOf="parent"
+            app:quizTitle="@{quiz}"
+            tools:text="Title" />
+
+        <TextView
+            android:id="@+id/quiz_subject"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="@+id/quiz_title"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/quiz_title"
+            app:layout_constraintTop_toBottomOf="@+id/quiz_title"
+            app:quizSubject="@{quiz}"
+            tools:text="Subject" />
+
+        <TextView
+            android:id="@+id/quiz_description"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/quiz_subject"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/quiz_subject"
+            app:layout_constraintTop_toBottomOf="@+id/quiz_subject"
+            app:layout_constraintVertical_bias="0.0"
+            app:quizDescription="@{quiz}"
+            tools:text="@string/quiz_description" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
