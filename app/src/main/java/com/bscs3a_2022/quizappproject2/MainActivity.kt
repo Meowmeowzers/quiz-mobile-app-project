@@ -43,6 +43,7 @@ class MainActivity : AppCompatActivity() {
                 R.id.quizListFragment,
                 R.id.diceFragment,
                 R.id.aboutFragment,
+                R.id.quizTakeList,
                 R.id.notificationsFragment,
                 R.id.helpAndFeedbackFragment
             ), drawerLayout

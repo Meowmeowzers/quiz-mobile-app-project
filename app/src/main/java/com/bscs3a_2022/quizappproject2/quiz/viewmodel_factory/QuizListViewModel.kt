@@ -44,3 +44,17 @@ class QuizListViewModel (
         _navigateToQuizDetails.value = null
     }
 }
+
+class QuizListViewModelFactory (
+    private val dataSource: QuizDatabaseDao,
+    private val application: Application
+) : ViewModelProvider.Factory {
+
+    @Suppress("unchecked_cast")
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(QuizListViewModel::class.java)) {
+            return QuizListViewModel(dataSource, application) as T
+        }
+        throw IllegalArgumentException("Unknown ViewModel class")
+    }
+}

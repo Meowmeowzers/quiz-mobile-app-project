@@ -55,3 +55,18 @@ open class QuizCreateViewModel (
         database.clearAllProblemsOfQuiz()
     }
 }
+
+
+class QuizCreateViewModelFactory (
+    private val dataSource: QuizDatabaseDao,
+    private val application: Application
+) : ViewModelProvider.Factory {
+
+    @Suppress("unchecked_cast")
+    override fun <T : ViewModel> create(modelClass: Class<T>): T {
+        if (modelClass.isAssignableFrom(QuizCreateViewModel::class.java)) {
+            return QuizCreateViewModel(dataSource, application) as T
+        }
+        throw IllegalArgumentException("Unknown ViewModel class")
+    }
+}
