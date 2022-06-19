@@ -11,6 +11,9 @@ data class Choices (
     @ColumnInfo(name = "choice_id")
     val choiceId: Long = 0L,
 
+    @ColumnInfo(name = "from_quiz")
+    var fromQuiz: Long,
+
     @ColumnInfo(name = "from_problem")
     var fromProblem: Long ,
 

@@ -1,12 +1,12 @@
 package com.bscs3a_2022.quizappproject2.quiz.viewmodel_factory
 
 import android.app.Application
-import androidx.lifecycle.*
+import androidx.lifecycle.AndroidViewModel
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
 import com.bscs3a_2022.quizappproject2.quiz.database.QuizDatabaseDao
 import com.bscs3a_2022.quizappproject2.quiz.database.entities.QuizSet
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import timber.log.Timber
 
 class QuizTakeListViewModel(
     val database: QuizDatabaseDao,

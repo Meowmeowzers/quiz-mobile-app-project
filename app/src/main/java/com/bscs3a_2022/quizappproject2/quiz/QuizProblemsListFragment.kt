@@ -42,18 +42,16 @@ class QuizProblemsListFragment: Fragment() {
         val viewModelFactory = QuizProblemListViewModelFactory(dataSource, application, sharedViewModel.id)
         val viewModel =
             ViewModelProvider(this, viewModelFactory)[QuizProblemsListViewModel::class.java]
-
         binding.lifecycleOwner = viewLifecycleOwner
         binding.problemsListViewModel = viewModel
 
         val adapter = QuizProblemListAdapter(ProblemItemListener { problem: Long ->
             sharedViewModel.setNewProblemId(problem)
+            Toast.makeText(context, sharedViewModel.problemId.toString(), Toast.LENGTH_SHORT).show()
             viewModel.onProblemItemClicked(problem)
-
         })
 
         binding.quizProblemsRecycler.adapter = adapter
-
         viewModel.selectedId = sharedViewModel.id
 
         viewModel.listofProblems.observe(viewLifecycleOwner) {
@@ -70,7 +68,7 @@ class QuizProblemsListFragment: Fragment() {
             }
         }
         binding.addquizproblem.setOnClickListener {
-            Toast.makeText(context, sharedViewModel.id.toString(), Toast.LENGTH_SHORT).show()
+//            Toast.makeText(context, sharedViewModel.pr.toString(), Toast.LENGTH_SHORT).show()
             val problemDescription = binding.editTextCreateProblemDescription.text.toString()
             viewModel.createProblem(sharedViewModel.id ,problemDescription)
 //            findNavController().navigate(R.id.action_quizCreateFragment_to_quizListFragment)

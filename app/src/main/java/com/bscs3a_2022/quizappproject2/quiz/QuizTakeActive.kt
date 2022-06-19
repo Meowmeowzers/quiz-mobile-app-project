@@ -8,12 +8,19 @@ import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.ViewModelProvider
 import com.bscs3a_2022.quizappproject2.R
 import com.bscs3a_2022.quizappproject2.databinding.QuizTakeBinding
+import com.bscs3a_2022.quizappproject2.databinding.QuizTakeProblemCardBinding
+import com.bscs3a_2022.quizappproject2.quiz.adapters.QuizTakeAdapter
+import com.bscs3a_2022.quizappproject2.quiz.adapters.QuizTakeChoiceListener
+import com.bscs3a_2022.quizappproject2.quiz.adapters.QuizTakeChoicesAdapter
 import com.bscs3a_2022.quizappproject2.quiz.database.QuizDatabase
 import com.bscs3a_2022.quizappproject2.quiz.viewmodel_factory.*
+import timber.log.Timber
 
 class QuizTakeActive : Fragment() {
     private var _binding: QuizTakeBinding? = null
     private val binding get() = _binding!!
+    private var _binding2: QuizTakeProblemCardBinding? = null
+    private val binding2 get() = _binding2!!
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,30 +32,37 @@ class QuizTakeActive : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = QuizTakeBinding.inflate(inflater, container, false)
+        _binding2 = QuizTakeProblemCardBinding.inflate(inflater, container, false)
         (activity as AppCompatActivity).supportActionBar?.title = "Quiz"
 
+        val shareViewModel: ShareViewModel by activityViewModels()
         val application = requireNotNull(this.activity).application
         val dataSource = QuizDatabase.getInstance(application).quizSetDatabaseDao
-        val viewModelFactory = QuizTakeActiveViewModelFactory(dataSource, application)
+        val viewModelFactory = QuizTakeActiveViewModelFactory(dataSource, application, shareViewModel.id)
         val viewModel =
             ViewModelProvider(this, viewModelFactory)[QuizTakeActiveViewModel::class.java]
-        val shareViewModel: ShareViewModel by activityViewModels()
-
         binding.lifecycleOwner = viewLifecycleOwner
+        binding.viewModel = viewModel
 
-//        binding.quizViewModel = viewModel
-//        val adapter = QuizListAdapter(QuizSetListener { quizSetId: Long ->
-//            shareViewModel.setNewId(quizSetId)
-//            viewModel.onQuizItemClicked(quizSetId)
-//        })
-//
-//        binding.quizListRecycler.adapter = adapter
-//
-//        viewModel.quizList.observe(viewLifecycleOwner) {
-//            it?.let {
-//                adapter.submitList(it)
-//            }
-//        }
+        val adapter2 = QuizTakeChoicesAdapter(QuizTakeChoiceListener { choiceId: Long ->
+            viewModel.onChoiceClicked(choiceId)
+            shareViewModel.choiceId = choiceId
+        })
+        val adapter = QuizTakeAdapter(adapter2)
+
+        binding.quizTakeProblemItemsRecycler.adapter = adapter
+
+
+        viewModel.listOfProblems.observe(viewLifecycleOwner) {
+            it?.let {
+                adapter.submitList(it)
+            }
+        }
+        viewModel.listOfChoices.observe(viewLifecycleOwner) {
+            it?.let {
+                adapter2.submitList(it)
+            }
+        }
 //        viewModel.navigateToQuizDetails.observe(viewLifecycleOwner) { quiz ->
 //            quiz?.let {
 //                this.findNavController().navigate(

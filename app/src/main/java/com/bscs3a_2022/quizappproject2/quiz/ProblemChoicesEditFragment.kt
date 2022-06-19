@@ -35,13 +35,14 @@ class ProblemChoicesEditFragment : Fragment() {
         val sharedViewModel: ShareViewModel by activityViewModels()
         val application = requireNotNull(this.activity).application
         val dataSource = QuizDatabase.getInstance(application).quizSetDatabaseDao
-        val viewModelFactory = ProblemChoicesEditViewModelFactory(dataSource, application, sharedViewModel.id)
+        val viewModelFactory = ProblemChoicesEditViewModelFactory(dataSource, application, sharedViewModel.problemId)
         val viewModel =
             ViewModelProvider(this, viewModelFactory)[ProblemChoicesEditViewModel::class.java]
 
         binding.lifecycleOwner = viewLifecycleOwner
 
         binding.viewmodel = viewModel
+
         viewModel.problem.observe(viewLifecycleOwner){
             it?.let{
                 sharedViewModel.problems = it
@@ -49,12 +50,10 @@ class ProblemChoicesEditFragment : Fragment() {
             }
         }
         val adapter = ProblemChoicesEditAdapter(ChoiceItemListener { choice: Long ->
-//            sharedViewModel.setNewChoiceId(choice)
-//            viewModel.onChoiceClicked(choice)
             viewModel.clearAChoice(choice)
         })
+
         binding.problemChoicesRecyclerView.adapter = adapter
-//        binding.problem = sharedViewModel.problemId
         viewModel.selectedId = sharedViewModel.problemId
 
 
@@ -64,18 +63,10 @@ class ProblemChoicesEditFragment : Fragment() {
             }
         }
 
-//        viewModel.navigateToProblemChoicesDetails.observe(viewLifecycleOwner) { problem ->
-//            problem?.let {
-//                this.findNavController().navigate(
-//                    QuizProblemsListFragmentDirections.actionQuizProblemsListFragmentToQuizProblemChoicesEditFragment(problem))
-//                viewModel.onProblemItemNavigated()
-//            }
-//        }
         binding.addproblemchoice.setOnClickListener {
             Toast.makeText(context, sharedViewModel.id.toString(), Toast.LENGTH_SHORT).show()
             val choiceDescription = binding.editTextCreateChoiceDescription.text.toString()
-            viewModel.createChoice(sharedViewModel.id, choiceDescription)
-
+            viewModel.createChoice(sharedViewModel.id, sharedViewModel.problemId, choiceDescription)
         }
         return binding.root
     }

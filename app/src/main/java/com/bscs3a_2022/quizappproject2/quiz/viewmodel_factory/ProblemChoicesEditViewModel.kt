@@ -28,9 +28,9 @@ class ProblemChoicesEditViewModel(
         problem = database.getProblem(id)
     }
 
-    fun createChoice(fromProblem: Long, description: String) {
+    fun createChoice(quiz: Long, problem: Long, description: String) {
         viewModelScope.launch(Dispatchers.IO) {
-            val newChoice = Choices(0, fromProblem, description)
+            val newChoice = Choices(0, quiz, problem, description)
             insert(newChoice)
         }
     }

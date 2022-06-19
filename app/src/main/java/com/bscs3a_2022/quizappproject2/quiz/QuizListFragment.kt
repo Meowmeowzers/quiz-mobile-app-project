@@ -32,7 +32,7 @@ class QuizListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = QuizListBinding.inflate(inflater, container, false)
-        (activity as AppCompatActivity).supportActionBar?.title = "Quiz"
+        (activity as AppCompatActivity).supportActionBar?.title = "Quiz List"
 
         val application = requireNotNull(this.activity).application
         val dataSource = QuizDatabase.getInstance(application).quizSetDatabaseDao
@@ -40,10 +40,9 @@ class QuizListFragment : Fragment() {
         val viewModel =
             ViewModelProvider(this, viewModelFactory)[QuizListViewModel::class.java]
         val shareViewModel: ShareViewModel by activityViewModels()
-
         binding.lifecycleOwner = viewLifecycleOwner
-
         binding.quizViewModel = viewModel
+
         val adapter = QuizListAdapter(QuizSetListener { quizSetId: Long ->
             shareViewModel.setNewId(quizSetId)
             viewModel.onQuizItemClicked(quizSetId)

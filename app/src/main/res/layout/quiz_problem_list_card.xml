@@ -22,7 +22,7 @@
         android:layout_margin="2dp">
 
         <androidx.cardview.widget.CardView
-            app:cardBackgroundColor="@color/teal_200"
+            app:cardBackgroundColor="@color/teal_light"
             app:cardCornerRadius="25dp"
             app:cardPreventCornerOverlap="true"
             android:layout_width="match_parent"

@@ -37,13 +37,12 @@ class QuizTakeList : Fragment() {
         val viewModel =
             ViewModelProvider(this, viewModelFactory)[QuizTakeListViewModel::class.java]
         val shareViewModel: ShareViewModel by activityViewModels()
-
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
 
-        val adapter = QuizTakeListAdapter(QuizSetTakeItemListener { quizSetId: Long ->
-            shareViewModel.setNewId(quizSetId)
-            viewModel.onQuizItemClicked(quizSetId)
+        val adapter = QuizTakeListAdapter(QuizSetTakeItemListener { id: Long ->
+            shareViewModel.setNewId(id)
+            viewModel.onQuizItemClicked(id)
         })
 
         binding.quizTakeListRecycler.adapter = adapter

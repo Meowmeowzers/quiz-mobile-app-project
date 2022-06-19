@@ -21,25 +21,13 @@ class ShareViewModel: ViewModel(){
         id = newId
     }
     fun setNewProblemId(newId: Long) {
-        id = newId
+        problemId = newId
     }
     fun setNewChoiceId(newId: Long) {
-        id = newId
+        choiceId = newId
     }
 
     var description: String = ""
 
 
 }
-
-//class ShareViewModelFactory(private val dataSource: QuizDatabaseDao) : ViewModelProvider.Factory {
-//
-//
-//    @Suppress("unchecked_cast")
-//    override fun <T : ViewModel> create(modelClass: Class<T>): T {
-//        if (modelClass.isAssignableFrom(ShareViewModel::class.java)) {
-//            return ShareViewModel() as T
-//        }
-//        throw IllegalArgumentException("Unknown ViewModel class")
-//    }
-//}

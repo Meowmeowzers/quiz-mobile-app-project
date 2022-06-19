@@ -51,19 +51,20 @@
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_item_list.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_item_list_text.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_list.xml" value="0.44895833333333335" />
-        <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_list_card.xml" value="0.5" />
+        <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_list_card.xml" value="0.35674157303370785" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_list_recyler.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_problem_choices_edit.xml" value="0.5" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_problem_choices_edit_list.xml" value="0.33671875" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_problem_choices_edit_list_card.xml" value="0.67" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_problem_create.xml" value="0.33671875" />
-        <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_problem_list_card.xml" value="0.5" />
+        <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_problem_list_card.xml" value="0.35674157303370785" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_problems.xml" value="0.33" />
-        <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_take.xml" value="0.33671875" />
+        <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_take.xml" value="0.5" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_take_choice_item.xml" value="0.33671875" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_take_item_card.xml" value="0.5" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_take_list.xml" value="0.33" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_take_list_card.xml" value="0.18426678067550234" />
+        <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_take_problem_card.xml" value="0.3768545994065282" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/quiz_take_result.xml" value="0.33671875" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/test.xml" value="0.33671875" />
         <entry key="..\:/Users/leola/Tree/AndroidStudioProjects/QuizAppProject2/app/src/main/res/layout/view_quiz.xml" value="0.31875" />
