@@ -52,7 +52,6 @@ class ChoiceListDiffCallback : DiffUtil.ItemCallback<Choices>() {
 
 class ChoiceItemListener(val clickListener: (Choice: Long) -> Unit) {
     fun onClick(choice: Choices) {
-        Timber.i("db process")
         clickListener(choice.choiceId)
     }
 }

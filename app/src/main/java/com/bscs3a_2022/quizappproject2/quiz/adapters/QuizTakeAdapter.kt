@@ -2,9 +2,11 @@ package com.bscs3a_2022.quizappproject2.quiz.adapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.os.persistableBundleOf
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
+import com.bscs3a_2022.quizappproject2.databinding.QuizTakeBinding
 import com.bscs3a_2022.quizappproject2.databinding.QuizTakeChoiceItemBinding
 import com.bscs3a_2022.quizappproject2.databinding.QuizTakeProblemCardBinding
 import com.bscs3a_2022.quizappproject2.quiz.database.entities.Choices
@@ -13,8 +15,9 @@ import com.bscs3a_2022.quizappproject2.quiz.database.entities.Problems
 
 class QuizTakeAdapter(adapter2: QuizTakeChoicesAdapter)
     : ListAdapter<Problems, QuizTakeAdapter.ViewHolder>(QuizTakeProblemListDiffCallback()) {
-
+    var position:Int = 0
     val adapter = adapter2
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder.from(parent)
     }
@@ -66,9 +69,10 @@ class QuizTakeChoicesAdapter (val clickListener: QuizTakeChoiceListener)
         holder.bind(item, clickListener)
     }
 
-    class ViewHolder private constructor(val binding: QuizTakeChoiceItemBinding) : RecyclerView.ViewHolder(binding.root){
+    class ViewHolder private constructor(val binding: QuizTakeChoiceItemBinding, val binding2: QuizTakeBinding) : RecyclerView.ViewHolder(binding.root){
 
         fun bind(item: Choices, clickListener: QuizTakeChoiceListener) {
+
             binding.choice = item
             binding.clickListener = clickListener
             binding.executePendingBindings()
@@ -78,7 +82,8 @@ class QuizTakeChoicesAdapter (val clickListener: QuizTakeChoiceListener)
             fun from(parent: ViewGroup): ViewHolder {
                 val layoutInflater = LayoutInflater.from(parent.context)
                 val binding = QuizTakeChoiceItemBinding.inflate(layoutInflater, parent, false)
-                return ViewHolder(binding)
+                val binding2 = QuizTakeBinding.inflate(layoutInflater, parent, false)
+                return ViewHolder(binding, binding2)
             }
         }
     }
@@ -101,90 +106,71 @@ class QuizTakeChoiceListener(val clickListener: (choiceId: Long) -> Unit) {
 }
 
 //
-//class QuizTakeAdapter (val clickListener: QuizSetTakeItemListener)
-//    : ListAdapter<QuizSet, QuizTakeListAdapter.ViewHolder>(QuizTakeListDiffCallback()) {
+//class CountryStateSectionedAdapter(var countryClickedListener: CountryClickedListener, var countryStateModelList
+//:MutableList<ExpandableCountryModel>) :  RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+//    private var isFirstItemExpanded : Boolean = true
+//    private var actionLock = false
+//    lateinit var countryName:String
 //
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-//        return ViewHolder.from(parent)
-//    }
+//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+//        return when(viewType) {
+//            ExpandableCountryModel.PARENT -> {CountryStateParentViewHolder(LayoutInflater.from(parent.context).inflate(
+//                R.layout.expandable_parent_item, parent, false))}
 //
-//    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-//        val item = getItem(position)
-//        holder.bind(item, clickListener)
-//    }
+//            ExpandableCountryModel.CHILD -> { CountryStateChildViewHolder(LayoutInflater.from(parent.context).inflate(
+//                R.layout.expandable_child_item, parent, false))  }
 //
-//    class ViewHolder private constructor(val binding: QuizTakeListCardBinding) : RecyclerView.ViewHolder(binding.root){
-//
-//        fun bind(item: QuizSet, clickListener: QuizSetTakeItemListener) {
-//            binding.quiz = item
-//            binding.clickListener = clickListener
-//            binding.executePendingBindings()
+//            else -> {CountryStateParentViewHolder(LayoutInflater.from(parent.context).inflate(
+//                R.layout.expandable_parent_item, parent, false))}
 //        }
+//    }
 //
-//        companion object {
-//            fun from(parent: ViewGroup): ViewHolder {
-//                val layoutInflater = LayoutInflater.from(parent.context)
-//                val binding = QuizTakeListCardBinding.inflate(layoutInflater, parent, false)
-//                return ViewHolder(binding)
+//    override fun getItemCount(): Int = countryStateModelList.size
+//
+//    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+//        val row = countryStateModelList[position]
+//        when(row.type){
+//            ExpandableCountryModel.PARENT -> {
+//                (holder as CountryStateParentViewHolder).countryName.text = row.countryParent.country
+//                countryName = row.countryParent.country
+//                holder.closeImage.visibility = View.GONE
+//                holder.upArrowImg.visibility = View.GONE
+//
+//            }
+//            ExpandableCountryModel.CHILD -> {
+//                (holder as CountryStateChildViewHolder).stateName.text = row.countryChild.name
+//                holder.capitalImage.text = row.countryChild.capital
+//                countryName?.let {
+//                    holder.layout.tag = it
+//                }
+//                holder.stateName.tag = row.countryChild
+//                holder.layout.setOnClickListener {
+//                    var countryInfo =   holder.stateName.tag
+//                    countryClickedListener.onItemClick(holder.layout.tag.toString(),
+//                        countryInfo as StateCapital.Country.State
+//                    )
+//                }
 //            }
 //        }
-//    }
-//}
 //
-//class QuizTakeListDiffCallback : DiffUtil.ItemCallback<QuizSet>() {
-//    override fun areItemsTheSame(oldItem: QuizSet, newItem: QuizSet): Boolean {
-//        return oldItem.quizSetId == newItem.quizSetId
 //    }
 //
-//    override fun areContentsTheSame(oldItem: QuizSet, newItem: QuizSet): Boolean {
-//        return oldItem == newItem
-//    }
-//}
 //
-//class QuizTakeListener(val clickListener: (quizSetId: Long) -> Unit) {
-//    fun onClick(quiz: QuizSet){
-//        clickListener(quiz.quizSetId)
+//    override fun getItemViewType(position: Int): Int = countryStateModelList[position].type
+//
+//    class CountryStateParentViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+//        internal var layout = itemView.country_item_parent_container
+//        internal var countryName : TextView = itemView.country_name
+//        internal var closeImage = itemView.close_arrow
+//        internal var upArrowImg = itemView.up_arrow
+//
+//    }
+//
+//    class CountryStateChildViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+//        internal var layout = itemView.country_item_child_container
+//        internal var stateName : TextView = itemView.state_name
+//        internal var capitalImage = itemView.capital_name
+//
 //    }
 //}
 
-
-//class MainHouseHolder(val binding: QuizTakeProblemCardBinding): RecyclerView.ViewHolder(binding.root)
-//
-//class MainHouseAdapter(private val context: Context, private val data: List<Problems>):
-//    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-//
-//    override fun getItemCount(): Int = data.size
-//
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainHouseHolder =
-//        MainHouseHolder(QuizTakeProblemCardBinding.inflate(LayoutInflater.from(parent.context), parent, false))
-//
-//    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-//        val problem = data[position]
-//        val binding = (holder as MainHouseHolder).binding
-//
-//        binding.quizTakeChoiceRecycler.adapter = MainTagAdapter(problem.)
-//        binding.innerRecycler.layoutManager =
-//            LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-//
-//        // process outer recycler view
-//    }
-//}
-//
-//class MainTagHolder(val binding: QuizTakeChoiceItemBinding) : RecyclerView.ViewHolder(binding.root)
-//
-//class MainTagAdapter(private val data: String) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
-//
-//    var tagData :MutableList<String> = mutableListOf()
-//    override fun getItemCount(): Int  {
-//        tagData  = data.split(",") as MutableList<String>
-//        return tagData.size
-//    }
-//
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainTagHolder =
-//        MainTagHolder(ItemInnerRecyclerBinding.inflate(LayoutInflater.from(parent.context), parent, false))
-//
-//    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-//        val binding = (holder as MainTagHolder).binding
-//        binding.houseTag.text = tagData[position]
-//    }
-//}

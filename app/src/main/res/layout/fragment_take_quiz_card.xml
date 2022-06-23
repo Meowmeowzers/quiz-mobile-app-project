@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.bscs3a_2022.quizappproject2.quiz.TakeQuizViewModel" />
+        <variable
+            name="problem"
+            type="com.bscs3a_2022.quizappproject2.quiz.database.entities.Problems2" />
+        <variable
+            name="clicklistener"
+            type="com.bscs3a_2022.quizappproject2.quiz.TakeQuizListener" />
+    </data>
+    <androidx.cardview.widget.CardView
+        app:cardBackgroundColor="@color/green_50"
+        app:cardCornerRadius="25dp"
+        app:cardElevation="0dp"
+        android:layout_marginHorizontal="5dp"
+        android:layout_marginVertical="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/take_quiz_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginVertical="16dp"
+                android:paddingHorizontal="5dp"
+                android:textSize="18sp"
+                android:textColor="@color/black2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Title" />
+            <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/take_quiz_description">
+
+                <RadioButton
+                    android:id="@+id/answerChoice1"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:buttonTint="@color/black2"
+                    android:onClick="@{() -> clicklistener.onClick(problem,1)}"/>
+
+                <RadioButton
+                    android:id="@+id/answerChoice2"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:buttonTint="@color/black2"
+                    android:onClick="@{() -> clicklistener.onClick(problem,2)}"/>
+
+                <RadioButton
+                    android:id="@+id/answerChoice3"
+                    android:layout_marginBottom="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:buttonTint="@color/black2"
+                    android:onClick="@{() -> clicklistener.onClick(problem,3)}"/>
+
+                <RadioButton
+                    android:id="@+id/answerChoice4"
+                    android:layout_marginBottom="8dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:buttonTint="@color/black2"
+                    android:onClick="@{() -> clicklistener.onClick(problem,4)}"/>
+        </RadioGroup>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

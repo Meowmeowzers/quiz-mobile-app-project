@@ -32,7 +32,7 @@ class QuizListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         _binding = QuizListBinding.inflate(inflater, container, false)
-        (activity as AppCompatActivity).supportActionBar?.title = "Quiz List"
+        (activity as AppCompatActivity).supportActionBar?.title = "Create/Modify a Quiz"
 
         val application = requireNotNull(this.activity).application
         val dataSource = QuizDatabase.getInstance(application).quizSetDatabaseDao
@@ -58,7 +58,7 @@ class QuizListFragment : Fragment() {
         viewModel.navigateToQuizDetails.observe(viewLifecycleOwner) { quiz ->
             quiz?.let {
                 this.findNavController().navigate(
-                    QuizListFragmentDirections.actionQuizListFragmentToQuizProblemsListFragment())
+                    QuizListFragmentDirections.actionQuizListFragmentToProblemsLFragment())
                 viewModel.onQuizItemDetailNavigated()
                 Toast.makeText(context, shareViewModel.id.toString(), LENGTH_SHORT).show()
             }

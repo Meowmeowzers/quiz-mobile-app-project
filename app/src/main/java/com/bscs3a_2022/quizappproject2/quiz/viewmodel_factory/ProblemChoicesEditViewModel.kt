@@ -9,8 +9,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
-
-
 class ProblemChoicesEditViewModel(
     val database: QuizDatabaseDao,
     application: Application,

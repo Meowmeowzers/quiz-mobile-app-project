@@ -25,7 +25,28 @@ data class ProblemsFromQuizSet(
     val problems: List<Problems>
     )
 
+@Entity(tableName = "quiz_set_problems2_table")
+data class Problems2 (
 
-//data class ProblemsOfQuizSet(
-//
-//)
+    @PrimaryKey(autoGenerate = true)
+    @ColumnInfo(name = "problem_id")
+    val problemId: Long = 0L,
+
+    @ColumnInfo(name = "from_quiz_set")
+    var fromQuiz: Long,
+
+    @ColumnInfo(name = "problem_description")
+    var description: String,
+
+    @ColumnInfo(name = "choice1")
+    var choice1: String,
+    @ColumnInfo(name = "choice2")
+    var choice2: String,
+    @ColumnInfo(name = "choice3")
+    var choice3: String,
+    @ColumnInfo(name = "choice4")
+    var choice4: String,
+
+    @ColumnInfo(name = "choice_answer")
+    var answer: Int? = 0
+)

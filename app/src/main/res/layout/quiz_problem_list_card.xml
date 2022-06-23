@@ -11,8 +11,14 @@
             name="problem"
             type="com.bscs3a_2022.quizappproject2.quiz.database.entities.Problems" />
         <variable
+            name="problem2"
+            type="com.bscs3a_2022.quizappproject2.quiz.database.entities.Problems2" />
+        <variable
             name="clickListener"
             type="com.bscs3a_2022.quizappproject2.quiz.adapters.ProblemItemListener" />
+        <variable
+            name="clickListener2"
+            type="com.bscs3a_2022.quizappproject2.ProblemItemListener2" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -22,7 +28,7 @@
         android:layout_margin="2dp">
 
         <androidx.cardview.widget.CardView
-            app:cardBackgroundColor="@color/teal_light"
+            app:cardBackgroundColor="@color/green_300"
             app:cardCornerRadius="25dp"
             app:cardPreventCornerOverlap="true"
             android:layout_width="match_parent"
@@ -34,7 +40,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.001"
-            android:onClick="@{() -> clickListener.onClick(problem)}">
+            android:onClick="@{() -> clickListener2.onClick(problem2)}">
 
             <TextView
                 android:layout_width="match_parent"
@@ -42,7 +48,7 @@
                 android:layout_gravity="center"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginVertical="10dp"
-                app:problemDescription="@{problem}" />
+                app:problem2Description="@{problem2}" />
 
         </androidx.cardview.widget.CardView>
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="problem"
+            type="com.bscs3a_2022.quizappproject2.quiz.database.entities.Problems2" />
+        <variable
+            name="viewmodel"
+            type="com.bscs3a_2022.quizappproject2.Problems2ViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:context="Problems2Fragment"
+                tools:showIn="navigation_view">
+
+                <EditText
+                    android:id="@+id/problem2Description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:background="@color/green_300"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="@string/problem_description"
+                    android:importantForAutofill="no"
+                    android:inputType="textMultiLine"
+                    android:minHeight="100dp"
+                    android:padding="5dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <EditText
+                    android:id="@+id/editTextChoice1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:background="@color/green_100"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint=" Insert New Choice Description"
+                    android:importantForAutofill="no"
+                    android:inputType="textMultiLine"
+                    android:padding="5dp"
+                    app:layout_constraintEnd_toStartOf="@id/radiobuttoncreate1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/problem2Description"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/editTextChoice2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:background="@color/green_100"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint=" Insert New Choice Description"
+                    android:importantForAutofill="no"
+                    android:inputType="textMultiLine"
+                    android:padding="5dp"
+                    app:layout_constraintEnd_toStartOf="@id/radiobuttoncreate2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextChoice1"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/editTextChoice3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:background="@color/green_100"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint=" Insert New Choice Description"
+                    android:importantForAutofill="no"
+                    android:inputType="textMultiLine"
+                    android:padding="5dp"
+                    app:layout_constraintEnd_toStartOf="@id/radiobuttoncreate3"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextChoice2"
+                    tools:ignore="HardcodedText" />
+
+                <EditText
+                    android:id="@+id/editTextChoice4"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:background="@color/green_100"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint=" Insert New Choice Description"
+                    android:importantForAutofill="no"
+                    android:inputType="textMultiLine"
+                    android:padding="5dp"
+                    app:layout_constraintEnd_toStartOf="@id/radiobuttoncreate4"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/editTextChoice3"
+                    tools:ignore="HardcodedText" />
+
+                <RadioButton
+                    android:id="@+id/radiobuttoncreate1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@id/editTextChoice1"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/editTextChoice1"
+                    app:layout_constraintTop_toTopOf="@id/editTextChoice1" />
+
+                <RadioButton
+                    android:id="@+id/radiobuttoncreate2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@id/editTextChoice2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/editTextChoice2"
+                    app:layout_constraintTop_toTopOf="@id/editTextChoice2" />
+
+                <RadioButton
+                    android:id="@+id/radiobuttoncreate3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@id/editTextChoice3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/editTextChoice3"
+                    app:layout_constraintTop_toTopOf="@id/editTextChoice3" />
+
+                <RadioButton
+                    android:id="@+id/radiobuttoncreate4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@id/editTextChoice4"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/editTextChoice4" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/saveChoices"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_margin="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/add_a_problem"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_baseline_add_24" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

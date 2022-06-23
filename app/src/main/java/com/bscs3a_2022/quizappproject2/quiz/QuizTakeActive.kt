@@ -14,7 +14,6 @@ import com.bscs3a_2022.quizappproject2.quiz.adapters.QuizTakeChoiceListener
 import com.bscs3a_2022.quizappproject2.quiz.adapters.QuizTakeChoicesAdapter
 import com.bscs3a_2022.quizappproject2.quiz.database.QuizDatabase
 import com.bscs3a_2022.quizappproject2.quiz.viewmodel_factory.*
-import timber.log.Timber
 
 class QuizTakeActive : Fragment() {
     private var _binding: QuizTakeBinding? = null
@@ -38,20 +37,20 @@ class QuizTakeActive : Fragment() {
         val shareViewModel: ShareViewModel by activityViewModels()
         val application = requireNotNull(this.activity).application
         val dataSource = QuizDatabase.getInstance(application).quizSetDatabaseDao
-        val viewModelFactory = QuizTakeActiveViewModelFactory(dataSource, application, shareViewModel.id)
+        val viewModelFactory = QuizTakeActiveViewModelFactory(dataSource, application, shareViewModel.id ,shareViewModel.problemId)
         val viewModel =
             ViewModelProvider(this, viewModelFactory)[QuizTakeActiveViewModel::class.java]
         binding.lifecycleOwner = viewLifecycleOwner
         binding.viewModel = viewModel
 
-        val adapter2 = QuizTakeChoicesAdapter(QuizTakeChoiceListener { choiceId: Long ->
-            viewModel.onChoiceClicked(choiceId)
-            shareViewModel.choiceId = choiceId
-        })
+        val adapter2 = QuizTakeChoicesAdapter(
+            QuizTakeChoiceListener { choiceId: Long ->
+                viewModel.onChoiceClicked(choiceId)
+                shareViewModel.choiceId = choiceId
+            }
+        )
         val adapter = QuizTakeAdapter(adapter2)
-
         binding.quizTakeProblemItemsRecycler.adapter = adapter
-
 
         viewModel.listOfProblems.observe(viewLifecycleOwner) {
             it?.let {
@@ -60,6 +59,7 @@ class QuizTakeActive : Fragment() {
         }
         viewModel.listOfChoices.observe(viewLifecycleOwner) {
             it?.let {
+
                 adapter2.submitList(it)
             }
         }

@@ -1,48 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
     <data>
         <variable
-            name="quizViewModel"
-            type="com.bscs3a_2022.quizappproject2.quiz.viewmodel_factory.QuizListViewModel" />
+            name="viewModel"
+            type="com.bscs3a_2022.quizappproject2.quiz.TakeQuizViewModel" />
         <variable
-            name="quizSet"
-            type="com.bscs3a_2022.quizappproject2.quiz.database.entities.QuizSet" />
+            name="problems"
+            type="com.bscs3a_2022.quizappproject2.quiz.database.entities.Problems2" />
     </data>
 
-<androidx.constraintlayout.widget.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/green_200"
-    tools:context=".quiz.QuizListFragment">
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/quiz_list_recycler"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:background="@color/green_700"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        tools:context="TakeQuizFragment">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/take_quiz_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="1dp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:listitem="@layout/quiz_list_card" />
+        tools:listitem="@layout/fragment_take_quiz_card"/>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/addquizitem"
+        android:id="@+id/passAnswers"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
-        android:contentDescription="@string/add_a_quiz_item"
-        android:minWidth="48dp"
-        android:minHeight="48dp"
+        android:layout_margin="15dp"
+        android:src="@drawable/ic_baseline_check_24"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@drawable/ic_baseline_add_24"
-        tools:ignore="HardcodedText" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:contentDescription="@string/pass_answers" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -2,8 +2,10 @@ package com.bscs3a_2022.quizappproject2.quiz.adapters
 
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
+import com.bscs3a_2022.quizappproject2.TakeQuizResultViewModel
 import com.bscs3a_2022.quizappproject2.quiz.database.entities.Choices
 import com.bscs3a_2022.quizappproject2.quiz.database.entities.Problems
+import com.bscs3a_2022.quizappproject2.quiz.database.entities.Problems2
 import com.bscs3a_2022.quizappproject2.quiz.database.entities.QuizSet
 
 @BindingAdapter("quizTitle")
@@ -48,4 +50,29 @@ import com.bscs3a_2022.quizappproject2.quiz.database.entities.QuizSet
 //    fun TextView.getChoiceDescription(item : Choices) : String {
 //        return item.description
 //}
+    @BindingAdapter("problem2Description")
+    fun TextView.setProblem2Description(item: Problems2){
+        text = item.description
+    }
+    @BindingAdapter("choice1")
+    fun TextView.setChoice1(item: Problems2){
+        text = item.choice1
+    }
+    @BindingAdapter("choice2")
+    fun TextView.setChoice2(item: Problems2){
+        text = item.choice2
+    }
+    @BindingAdapter("choice3")
+    fun TextView.setChoice3(item: Problems2){
+        text = item.choice3
+    }
+    @BindingAdapter("choice4")
+    fun TextView.setChoice4(item: Problems2){
+        text = item.choice4
+    }
+/*---------------------------------------------------------------*/
 
+@BindingAdapter("set_score")
+    fun TextView.setScore(item: TakeQuizResultViewModel){
+        text = "Your Score is: \n${item.score} / ${item.over}"
+    }

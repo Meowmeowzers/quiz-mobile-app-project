@@ -30,9 +30,9 @@ class QuizTakeResult : Fragment() {
         val application = requireNotNull(this.activity).application
         val dataSource = QuizDatabase.getInstance(application).quizSetDatabaseDao
         val viewModelFactory = QuizTakeResultViewModelFactory(dataSource, application)
-        val viewModel =
-            ViewModelProvider(this, viewModelFactory)[QuizTakeResultViewModel::class.java]
-        val shareViewModel: ShareViewModel by activityViewModels()
+//        val viewModel =
+//            ViewModelProvider(this, viewModelFactory)[QuizTakeResultViewModel::class.java]
+//        val shareViewModel: ShareViewModel by activityViewModels()
 
 //        binding.lifecycleOwner = viewLifecycleOwner
 

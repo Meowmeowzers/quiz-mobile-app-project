@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="problem"
+            type="com.bscs3a_2022.quizappproject2.quiz.database.entities.Problems2" />
+        <variable
+            name="viewmodel"
+            type="com.bscs3a_2022.quizappproject2.Problems2DetailViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/light_gray"
+        tools:showIn="navigation_view"
+        tools:context="Problems2DetailFragment">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="90dp">
+
+                <EditText
+                    android:id="@+id/problem2Description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="6dp"
+                    android:background="@color/green_300"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="@string/problem_description"
+                    android:inputType="textMultiLine"
+                    android:minHeight="100dp"
+                    android:padding="5dp"
+                    android:text="@={viewmodel.curProblem.description}"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <RadioGroup
+                    android:id="@+id/radioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="6dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/problem2Description"
+                    app:layout_constraintVertical_bias="0.0">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <EditText
+                            android:id="@+id/editTextChoice1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="12dp"
+                            android:layout_marginEnd="6dp"
+                            android:background="@color/green_100"
+                            android:ems="10"
+                            android:gravity="start|top"
+                            android:hint=" Insert New Choice Description"
+                            android:inputType="textMultiLine"
+                            android:minHeight="50dp"
+                            android:padding="5dp"
+                            android:text="@{viewmodel.curProblem.choice1}"
+                            app:layout_constraintEnd_toStartOf="@+id/radiobutton1"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="HardcodedText" />
+
+                        <EditText
+                            android:id="@+id/editTextChoice2"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginEnd="6dp"
+                            android:background="@color/green_100"
+                            android:ems="10"
+                            android:gravity="start|top"
+                            android:hint=" Insert New Choice Description"
+                            android:inputType="textMultiLine"
+                            android:minHeight="50dp"
+                            android:padding="5dp"
+                            android:text="@{viewmodel.curProblem.choice2}"
+                            app:layout_constraintEnd_toStartOf="@+id/radiobutton2"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/editTextChoice1"
+                            tools:ignore="HardcodedText" />
+
+
+                        <EditText
+                            android:id="@+id/editTextChoice3"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginEnd="6dp"
+                            android:background="@color/green_100"
+                            android:ems="10"
+                            android:gravity="start|top"
+                            android:hint=" Insert New Choice Description"
+                            android:inputType="textMultiLine"
+                            android:minHeight="50dp"
+                            android:padding="5dp"
+                            android:text="@{viewmodel.curProblem.choice3}"
+                            app:layout_constraintEnd_toStartOf="@+id/radiobutton3"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/editTextChoice2"
+                            tools:ignore="HardcodedText" />
+
+                        <EditText
+                            android:id="@+id/editTextChoice4"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="6dp"
+                            android:layout_marginEnd="6dp"
+                            android:background="@color/green_100"
+                            android:ems="10"
+                            android:gravity="start|top"
+                            android:hint=" Insert New Choice Description"
+                            android:inputType="textMultiLine"
+                            android:minHeight="50dp"
+                            android:padding="5dp"
+                            android:text="@{viewmodel.curProblem.choice4}"
+                            app:layout_constraintEnd_toStartOf="@+id/radiobutton4"
+                            app:layout_constraintHorizontal_bias="1.0"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/editTextChoice3"
+                            tools:ignore="HardcodedText" />
+
+                        <RadioButton
+                            android:id="@+id/radiobutton1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@+id/editTextChoice1"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/editTextChoice1" />
+
+                        <RadioButton
+                            android:id="@+id/radiobutton2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@+id/editTextChoice2"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/editTextChoice2" />
+
+                        <RadioButton
+                            android:id="@+id/radiobutton3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@+id/editTextChoice3"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/editTextChoice3" />
+
+                        <RadioButton
+                            android:id="@+id/radiobutton4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:layout_constraintBottom_toBottomOf="@+id/editTextChoice4"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/editTextChoice4" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </RadioGroup>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/save"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:contentDescription="@string/add_a_problem"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_baseline_check_24" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/deleteproblem2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_marginBottom="16dp"
+            android:contentDescription="@string/add_a_problem"
+            android:minWidth="48dp"
+            android:minHeight="48dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/ic_baseline_delete_24" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

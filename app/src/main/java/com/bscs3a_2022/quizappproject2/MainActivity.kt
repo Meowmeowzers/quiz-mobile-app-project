@@ -12,6 +12,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.bscs3a_2022.quizappproject2.databinding.ActivityMainBinding
+import com.bscs3a_2022.quizappproject2.quiz.database.QuizDatabase
 import com.google.android.material.navigation.NavigationView
 import timber.log.Timber
 
@@ -44,6 +45,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.diceFragment,
                 R.id.aboutFragment,
                 R.id.quizTakeList,
+                R.id.takeListFragment,
+                R.id.quizTakeResult,
                 R.id.notificationsFragment,
                 R.id.helpAndFeedbackFragment
             ), drawerLayout
@@ -58,10 +61,7 @@ class MainActivity : AppCompatActivity() {
         menuInflater.inflate(R.menu.menu_main, menu)
         return true
     }
-//
-//    fun clearOptionsMenu(menu: Menu){
-//        binding.includeAppBar.toolbar.menu.clear()
-//    }
+
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return navController.navigateUp(appBarConfiguration)
@@ -89,6 +89,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() {
         super.onDestroy()
+        QuizDatabase.getInstance(applicationContext).close()
         Timber.i("onDestroy Called")
     }
 

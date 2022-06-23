@@ -55,4 +55,6 @@
     <string name="create_edit_a_quiz">Create/Edit a Quiz</string>
     <string name="take_quiz">Take Quiz</string>
     <string name="pass_answers">Pass Answers</string>
+    <string name="about_info">Laureta, Leonardo B.\n\nSalvador, Philip U.\n\nBSCS 3A \n\n 2022</string>
+    <string name="create">Create</string>
 </resources>

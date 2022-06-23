@@ -1,11 +1,9 @@
 package com.bscs3a_2022.quizappproject2.quiz.database
 
 import androidx.lifecycle.LiveData
+import androidx.lifecycle.MutableLiveData
 import androidx.room.*
-import com.bscs3a_2022.quizappproject2.quiz.database.entities.Choices
-import com.bscs3a_2022.quizappproject2.quiz.database.entities.Problems
-import com.bscs3a_2022.quizappproject2.quiz.database.entities.ProblemsFromQuizSet
-import com.bscs3a_2022.quizappproject2.quiz.database.entities.QuizSet
+import com.bscs3a_2022.quizappproject2.quiz.database.entities.*
 
 @Dao
 interface QuizDatabaseDao {
@@ -17,10 +15,13 @@ interface QuizDatabaseDao {
     fun updateQuizSet(quiz: QuizSet)
 
     @Query("SELECT * from quiz_set_table WHERE quiz_set_id = :key")
-    fun getQuizSet(key: Long): QuizSet?
+    fun getQuizSet(key: Long): LiveData<QuizSet?>
 
     @Query("DELETE FROM quiz_set_table")
     fun clearQuizSetDataBase()
+
+    @Query("DELETE FROM quiz_set_table WHERE quiz_set_id = :key")
+    fun clearAQuizSet(key: Long)
 
     @Query("SELECT * FROM quiz_set_table ORDER BY quiz_set_id ASC LIMIT 1")
     fun getRecentQuizSet(): QuizSet?
@@ -78,9 +79,12 @@ interface QuizDatabaseDao {
     fun getRecentChoice(): Choices?
 
     @Query("SELECT * FROM quiz_set_problem_choices_table " +
-            "WHERE from_problem = :id"
-    )
+            "WHERE from_problem = :id")
     fun getChoicesOfProblem(id: Long):LiveData<List<Choices>>
+
+    @Query("SELECT * FROM quiz_set_problem_choices_table " +
+            "WHERE from_quiz = :id")
+    fun getChoicesOfQuiz(id: Long):LiveData<List<Choices>>
 
     @Query("DELETE from quiz_set_problem_choices_table WHERE choice_id = :key")
     fun clearAChoice(key: Long)
@@ -107,5 +111,27 @@ interface QuizDatabaseDao {
     )
     fun getProblemAndItsChoices(): Map<Problems, List<Choices>>
 
+//////////////////////////////////////////////////////////////
 
+    @Insert
+    fun insertProblems2(problem: Problems2)
+
+    @Update
+    fun updateProblems2(problem: Problems2)
+
+    @Query("SELECT * FROM quiz_set_problems2_table " +
+            "WHERE from_quiz_set = :id")
+    fun getProblems2(id: Long):LiveData<List<Problems2>>
+
+    @Query("SELECT * from quiz_set_problems2_table WHERE problem_id = :key")
+    fun getAProblem2orNull(key: Long): LiveData<Problems2?>
+
+    @Query("SELECT * from quiz_set_problems2_table WHERE problem_id = :key")
+    fun getAProblem2(key: Long): LiveData<Problems2>
+
+    @Query("DELETE FROM quiz_set_problems2_table WHERE problem_id = :key")
+    fun deleteAProblem2(key: Long)
+
+    @Query("DELETE FROM quiz_set_problems2_table WHERE from_quiz_set = :key")
+    fun deleteProblem2(key: Long)
 }

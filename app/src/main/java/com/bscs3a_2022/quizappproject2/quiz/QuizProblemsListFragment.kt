@@ -73,6 +73,7 @@ class QuizProblemsListFragment: Fragment() {
             viewModel.createProblem(sharedViewModel.id ,problemDescription)
 //            findNavController().navigate(R.id.action_quizCreateFragment_to_quizListFragment)
         }
+
         return binding.root
     }
 
